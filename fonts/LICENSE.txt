@@ -1,0 +1,47 @@
+ms_sans_serif.woff2
+
+The FontStruction “MS Sans Serif”
+(https://fontstruct.com/fontstructions/show/1384746) by “lou” is licensed
+under a Creative Commons Attribution Share Alike license
+(http://creativecommons.org/licenses/by-sa/3.0/).
+
+ms_sans_serif_bold.woff2
+
+The FontStruction “MS Sans Serif Bold”
+(https://fontstruct.com/fontstructions/show/1384862) by “lou” is licensed
+under a Creative Commons Attribution Share Alike license
+(http://creativecommons.org/licenses/by-sa/3.0/).
+
+Both files were converted to WOFF2 by 98.css
+(https://github.com/jdan/98.css), copyright 2020 Jordan Scales, and are
+shared here unmodified under the same license.
+
+material_icons_pixel.woff2
+material_icons_outlined_pixel.woff2
+
+Material Icons (https://github.com/google/material-design-icons), copyright
+Google, licensed under the Apache License 2.0
+(see LICENSE-APACHE-2.0.txt). Modified: about 180 glyphs
+were replaced with Pixelarticons glyphs; icon names and codepoints are
+unchanged.
+
+Pixelarticons (https://github.com/halfmage/pixelarticons), copyright 2019
+Gerrit Halfmann, licensed under the MIT License:
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

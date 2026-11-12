@@ -1,0 +1,678 @@
+@import "fonts/fonts.css";
+
+.light-theme {
+  --background: #c0c0c0;
+  --base-gray: #808080;
+  --base-accent: #000080;
+  --base-red: #ff0000;
+  --base-yellow: #808000;
+  --base-green: #008000;
+  --base-blue: #0000ff;
+  --base-purple: #800080;
+  --base-pink: #ff00ff;
+
+  /* Windows 98 system colors */
+  --win-desktop: #008080;
+  --win-face: #c0c0c0;
+  --win-window: #ffffff;
+  --win-text: #000000;
+  --win-gray-text: #808080;
+  --win-highlight: #000080;
+  --win-highlight-text: #ffffff;
+  --win-tooltip-bg: #ffffe1;
+  --win-gridline: #c0c0c0;
+  --win-link: #0000ff;
+  --win-editor-selection: #a6caf0;
+
+  --bevel-light: #ffffff;
+  --bevel-mid: #dfdfdf;
+  --bevel-dark: #808080;
+  --bevel-darkest: #0a0a0a;
+
+  --titlebar-bg: linear-gradient(90deg, #000080, #1084d0);
+  --titlebar-fg: #ffffff;
+  --titlebar-inactive-bg: linear-gradient(90deg, #808080, #b5b5b5);
+  --titlebar-inactive-fg: #c0c0c0;
+
+  --win-arrow-up: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='7' height='4' shape-rendering='crispEdges'><path fill='black' d='M3 0h1v1h1v1h1v1h1v1H0V3h1V2h1V1h1z'/></svg>");
+  --win-arrow-down: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='7' height='4' shape-rendering='crispEdges'><path fill='black' d='M0 0h7v1H6v1H5v1H4v1H3V3H2V2H1V1H0z'/></svg>");
+  --win-arrow-left: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='7' shape-rendering='crispEdges'><path fill='black' d='M3 0h1v7H3V6H2V5H1V4H0V3h1V2h1V1h1z'/></svg>");
+  --win-arrow-right: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='7' shape-rendering='crispEdges'><path fill='black' d='M0 0h1v1h1v1h1v1h1v1H3v1H2v1H1v1H0z'/></svg>");
+
+  /* Visual C++ 6 editor colors */
+  --syntax-keyword: #0000ff;
+  --syntax-string: #800000;
+  --syntax-constant: #800080;
+  --syntax-variable: #000000;
+  --syntax-function: #008080;
+  --syntax-type: #000080;
+  --syntax-decorator: #808000;
+  --syntax-link: #0000ff;
+  --syntax-diff: #ff0000;
+  --syntax-comment: #008000;
+  --syntax-punctuation: #000000;
+}
+
+/* Windows 98 had no dark mode, so this keeps the bevels on dark grays. */
+.dark-theme {
+  --background: #2b2b2b;
+  --base-gray: #808080;
+  --base-accent: #1084d0;
+  --base-red: #ff5555;
+  --base-yellow: #ffff55;
+  --base-green: #55ff55;
+  --base-blue: #5555ff;
+  --base-purple: #ff55ff;
+  --base-pink: #ff55ff;
+
+  --win-desktop: #004040;
+  --win-face: #3c3c3c;
+  --win-window: #1e1e1e;
+  --win-text: #ffffff;
+  --win-gray-text: #8a8a8a;
+  --win-highlight: #000080;
+  --win-highlight-text: #ffffff;
+  --win-tooltip-bg: #3c3c3c;
+  --win-gridline: #3c3c3c;
+  --win-link: #55ffff;
+  --win-editor-selection: #000080;
+
+  --bevel-light: #6a6a6a;
+  --bevel-mid: #555555;
+  --bevel-dark: #1a1a1a;
+  --bevel-darkest: #000000;
+
+  --titlebar-bg: linear-gradient(90deg, #000080, #1084d0);
+  --titlebar-fg: #ffffff;
+  --titlebar-inactive-bg: linear-gradient(90deg, #404040, #606060);
+  --titlebar-inactive-fg: #a0a0a0;
+
+  --win-arrow-up: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='7' height='4' shape-rendering='crispEdges'><path fill='white' d='M3 0h1v1h1v1h1v1h1v1H0V3h1V2h1V1h1z'/></svg>");
+  --win-arrow-down: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='7' height='4' shape-rendering='crispEdges'><path fill='white' d='M0 0h7v1H6v1H5v1H4v1H3V3H2V2H1V1H0z'/></svg>");
+  --win-arrow-left: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='7' shape-rendering='crispEdges'><path fill='white' d='M3 0h1v7H3V6H2V5H1V4H0V3h1V2h1V1h1z'/></svg>");
+  --win-arrow-right: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='7' shape-rendering='crispEdges'><path fill='white' d='M0 0h1v1h1v1h1v1h1v1H3v1H2v1H1v1H0z'/></svg>");
+
+  /* The bright half of the 16-color VGA palette */
+  --syntax-keyword: #55ffff;
+  --syntax-string: #ffff55;
+  --syntax-constant: #ff55ff;
+  --syntax-variable: #ffffff;
+  --syntax-function: #55ff55;
+  --syntax-type: #5555ff;
+  --syntax-decorator: #aaaa00;
+  --syntax-link: #55ffff;
+  --syntax-diff: #ff5555;
+  --syntax-comment: #aaaaaa;
+  --syntax-punctuation: #ffffff;
+}
+
+.light-theme,
+.dark-theme {
+  /* Bevels, from outermost to innermost edge */
+  --bevel-raised: inset -1px -1px var(--bevel-darkest),
+    inset 1px 1px var(--bevel-light), inset -2px -2px var(--bevel-dark),
+    inset 2px 2px var(--bevel-mid);
+  --bevel-pressed: inset -1px -1px var(--bevel-light),
+    inset 1px 1px var(--bevel-darkest), inset -2px -2px var(--bevel-mid),
+    inset 2px 2px var(--bevel-dark);
+  --bevel-default: inset -2px -2px var(--bevel-darkest),
+    inset 1px 1px var(--bevel-darkest), inset 2px 2px var(--bevel-light),
+    inset -3px -3px var(--bevel-dark), inset 3px 3px var(--bevel-mid);
+  --bevel-window: inset -1px -1px var(--bevel-darkest),
+    inset 1px 1px var(--bevel-mid), inset -2px -2px var(--bevel-dark),
+    inset 2px 2px var(--bevel-light);
+  --bevel-field: inset -1px -1px var(--bevel-light),
+    inset 1px 1px var(--bevel-dark), inset -2px -2px var(--bevel-mid),
+    inset 2px 2px var(--bevel-darkest);
+  --bevel-thin-raised: inset -1px -1px var(--bevel-dark),
+    inset 1px 1px var(--bevel-light);
+  --bevel-thin-sunken: inset -1px -1px var(--bevel-light),
+    inset 1px 1px var(--bevel-dark);
+
+  --font-family: "Pixelated MS Sans Serif", "MS Sans Serif",
+    "Microsoft Sans Serif", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--font-family);
+  -webkit-font-smoothing: none;
+
+  /* App */
+  --app-bg: var(--win-desktop);
+  --app-fg: var(--win-text);
+  --focus-ring: 1px dotted var(--win-text);
+  --preloader-accent: var(--win-highlight);
+
+  /* Buttons */
+  --btn-border-radius: 0;
+  --btn-small-border-radius: 0;
+
+  --btn-fg: var(--win-text);
+  --btn-fg-hover: var(--win-text);
+  --btn-bg: transparent;
+  --btn-bg-hover: transparent;
+
+  --btn-flat-fg: var(--win-text);
+  --btn-flat-fg-hover: var(--win-text);
+  --btn-flat-bg: var(--win-face);
+  --btn-flat-bg-hover: var(--win-face);
+  --btn-flat-shadow: var(--bevel-raised);
+
+  --btn-primary-fg: var(--win-text);
+  --btn-primary-bg: var(--win-face);
+  --btn-primary-bg-hover: var(--win-face);
+  --btn-primary-shadow: var(--bevel-default);
+
+  --btn-icon-fg: var(--win-text);
+  --btn-icon-fg-hover: var(--win-text);
+
+  /* Fields */
+  --input-bg: var(--win-window);
+  --input-fg: var(--win-text);
+  --input-border: none;
+  --input-border-focus: none;
+  --input-border-radius: 0;
+
+  --checkbox-border: transparent;
+  --checkbox-border-radius: 0;
+  --checkbox-bg: var(--win-window);
+  --checkbox-checked-bg: var(--win-window);
+  --checkbox-checked-fg: var(--win-text);
+
+  --link-fg: var(--win-link);
+
+  --selection-bg: var(--win-highlight);
+  --selection-fg: var(--win-highlight-text);
+
+  --scrollbar-track: var(--win-face);
+  --scrollbar-thumb: var(--win-face);
+
+  /* Sidebars */
+  --sidebar-bg: var(--win-face);
+  --sidebar-fg: var(--win-text);
+
+  --sidebar-rail-bg: var(--win-face);
+  --sidebar-rail-fg: var(--win-text);
+  --sidebar-rail-fg-hover: var(--win-text);
+  --sidebar-rail-active-fg: var(--win-text);
+  --sidebar-rail-active-bg: transparent;
+  --sidebar-rail-border: var(--bevel-dark);
+
+  --gutter-border: var(--bevel-dark);
+  --query-editor-gutter-border: var(--bevel-dark);
+
+  /* Windows, menus and dialogs */
+  --panel-bg: var(--win-face);
+  --panel-fg: var(--win-text);
+  --panel-bg-hover: var(--win-highlight);
+  --panel-shadow: var(--bevel-window);
+  --panel-border: none;
+  --panel-border-radius: 0;
+
+  --menu-bg: var(--win-face);
+  --menu-fg: var(--win-text);
+  --menu-bg-hover: var(--win-highlight);
+  --menu-shadow: var(--bevel-window);
+  --menu-border: none;
+  --menu-border-radius: 0;
+
+  --connection-form-card-bg: var(--win-face);
+
+  --notif-bg: var(--win-face);
+  --notif-shadow: var(--bevel-window);
+  --notif-fg: var(--win-text);
+  --notif-close-fg: var(--win-text);
+  --notif-close-fg-hover: var(--win-text);
+
+  --alert-border-radius: 0;
+
+  /* Nav pills */
+  --nav-pills-shadow: inset 0 -1px var(--bevel-dark);
+  --nav-pill-fg: var(--win-text);
+  --nav-pill-fg-hover: var(--win-text);
+  --nav-pill-shadow-hover: none;
+  --nav-pill-active-fg: var(--win-text);
+  --nav-pill-active-shadow: inset 0 -2px var(--win-highlight);
+
+  --tree-guide-border: var(--bevel-dark);
+  --tree-guide-border-hover: var(--bevel-dark);
+
+  /* Tables */
+  --table-bg: var(--win-window);
+  --table-fg: var(--win-text);
+  --table-header-shadow: none;
+  --table-header-highlight-bg: var(--win-face);
+  --table-header-highlight-fg: var(--win-text);
+  --table-header-selected-bg: var(--win-highlight);
+  --table-header-selected-fg: var(--win-highlight-text);
+  --table-row-header-shadow: 1px 0 var(--bevel-dark);
+  --table-row-odd-bg: transparent;
+  --table-cell-bg-hover: transparent;
+  --table-cell-selected-bg: rgb(from var(--win-highlight) r g b / 20%);
+  --table-range-border: var(--win-highlight);
+  --table-range-handle-bg: var(--win-highlight);
+  --table-filter-bg: var(--win-face);
+
+  --kbd-bg: var(--win-face);
+  --kbd-fg: var(--win-text);
+  --kbd-shadow: var(--bevel-thin-raised);
+
+  --badge-flat-bg: var(--win-face);
+  --badge-flat-fg: var(--win-text);
+  --badge-primary-bg: var(--win-highlight);
+  --badge-primary-fg: var(--win-highlight-text);
+
+  --statusbar-bg: var(--win-face);
+  --statusbar-fg: var(--win-text);
+  --statusbar-fg-inverse: var(--win-window);
+
+  /* Tabs */
+  --tabs-header-bg: var(--win-face);
+  --tab-fg: var(--win-text);
+  --tab-bg: var(--win-face);
+  --tab-active-fg: var(--win-text);
+  --tab-active-bg: var(--win-face);
+
+  --bottom-panel-bg: var(--win-window);
+
+  /* Editor */
+  --editor-bg: var(--win-window);
+  --editor-fg: var(--win-text);
+  --editor-cursor-bg: var(--win-text);
+  --editor-selected-bg: var(--win-editor-selection);
+  --editor-activeline-bg: transparent;
+  --editor-activeline-gutter-bg: transparent;
+  --editor-gutter-bg: var(--win-window);
+  --editor-linenumber-fg: var(--win-gray-text);
+  --editor-linenumber-active-fg: var(--win-text);
+}
+
+/* ===== Icons ===== */
+
+/* The app's CSS loads after the theme and would win a font with the same
+   name, so the patched icon fonts have their own names. */
+.material-icons,
+.driver-popover .material-icons,
+input[type="checkbox"]:checked::after,
+.BksUiKit input[type="checkbox"]:checked::after,
+.flyout-nav li a input[type="checkbox"]:checked + .label::before,
+.flyout-nav li.has-children > a::after,
+.tabulator .tabulator-header .tabulator-col.foreign-key::before,
+.tabulator .tabulator-header .tabulator-col.primary-key::before,
+.tabulator .tabulator-header .tabulator-col.read-only-field::before,
+.tabulator .tabulator-header .tabulator-col.generated-column::before,
+.BksTable .tabulator-header .tabulator-col.foreign-key::before,
+.BksTable .tabulator-header .tabulator-col.primary-key::before,
+.BksTable .tabulator-header .tabulator-col.read-only-field::before,
+.BksTable .tabulator-header .tabulator-col.generated-column::before,
+.tabulator-footer .tabulator-page[data-page]::before,
+.BksTable .tabulator-footer .tabulator-page[data-page]::before,
+.tabulator-table .tabulator-row div.dynamic-action::after,
+.BksTextEditor-hints .cm-completionIcon-table::before,
+.BksTextEditor-hints .cm-completionIcon-view::before,
+.BksTextEditor-hints .cm-completionIcon-materialized-view::before {
+  font-family: "Pixel Material Icons";
+}
+
+.material-icons-outlined {
+  font-family: "Pixel Material Icons Outlined";
+}
+
+/* ===== Buttons ===== */
+
+.btn {
+  cursor: default;
+}
+
+/* Many buttons hardcode their own radius, so the tokens alone miss them. */
+button,
+x-button,
+x-buttons,
+x-selectbutton,
+.btn,
+.btn-icon,
+[role="button"],
+.add-tab-group,
+.global-items .nav-item,
+.global-items .nav-item > span,
+.global-items .avatar {
+  border-radius: 0 !important;
+}
+
+.btn-flat:active {
+  --btn-flat-shadow: var(--bevel-pressed);
+}
+
+.btn-primary:active {
+  --btn-primary-shadow: var(--bevel-pressed);
+}
+
+.btn:not(.btn-flat, .btn-primary):hover {
+  box-shadow: var(--bevel-thin-raised);
+}
+
+.btn:not(.btn-flat, .btn-primary):active {
+  box-shadow: var(--bevel-thin-sunken);
+}
+
+/* Latched toggle buttons, like Bold in WordPad */
+x-button[toggled],
+x-button[skin="nav"][toggled] {
+  color: var(--win-text);
+  background-color: var(--win-face);
+  background-image: conic-gradient(
+    var(--bevel-light) 25%,
+    transparent 0 50%,
+    var(--bevel-light) 0 75%,
+    transparent 0
+  );
+  background-size: 2px 2px;
+  box-shadow: var(--bevel-pressed);
+}
+
+.btn:focus-visible {
+  outline: 1px dotted var(--win-text);
+  outline-offset: -4px;
+}
+
+/* ===== Fields ===== */
+
+input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]),
+select,
+textarea {
+  border-radius: 0;
+  box-shadow: var(--bevel-field);
+}
+
+input[type="checkbox"],
+input[type="checkbox"]:active,
+input[type="checkbox"]:checked,
+input[type="checkbox"]:checked:active {
+  outline: none;
+  background: var(--win-window);
+  box-shadow: var(--bevel-field);
+}
+
+input[type="radio"] {
+  border: 0;
+  background: var(--win-window);
+  box-shadow: var(--bevel-field);
+}
+
+input[type="radio"]:checked {
+  border: 0;
+  background: radial-gradient(
+    circle,
+    var(--win-text) 0 2px,
+    var(--win-window) 2.5px
+  );
+}
+
+/* ===== Scrollbars ===== */
+
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: var(--win-face);
+  background-image: conic-gradient(
+    var(--bevel-light) 25%,
+    transparent 0 50%,
+    var(--bevel-light) 0 75%,
+    transparent 0
+  );
+  background-size: 2px 2px;
+  background-repeat: repeat !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--win-face);
+  border-radius: 0;
+  box-shadow: var(--bevel-raised);
+}
+
+::-webkit-scrollbar-button {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-color: var(--win-face);
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: var(--bevel-raised);
+}
+
+::-webkit-scrollbar-button:active {
+  box-shadow: inset 0 0 0 1px var(--bevel-dark);
+}
+
+::-webkit-scrollbar-button:vertical:start:increment,
+::-webkit-scrollbar-button:vertical:end:decrement,
+::-webkit-scrollbar-button:horizontal:start:increment,
+::-webkit-scrollbar-button:horizontal:end:decrement {
+  display: none;
+}
+
+::-webkit-scrollbar-button:vertical:decrement {
+  background-image: var(--win-arrow-up);
+}
+
+::-webkit-scrollbar-button:vertical:increment {
+  background-image: var(--win-arrow-down);
+}
+
+::-webkit-scrollbar-button:horizontal:decrement {
+  background-image: var(--win-arrow-left);
+}
+
+::-webkit-scrollbar-button:horizontal:increment {
+  background-image: var(--win-arrow-right);
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--win-face);
+}
+
+/* ===== Status bar ===== */
+
+/* A colored connection turns the status bar text white, but fields and
+   buttons here stay white and gray, so they keep black text. */
+.global-status-bar .statusbar {
+  --input-fg: var(--win-text);
+  --input-border: none;
+  --btn-flat-fg: var(--win-text);
+  --btn-flat-fg-hover: var(--win-text);
+  --btn-primary-fg: var(--win-text);
+  --btn-primary-bg: var(--win-face);
+  --btn-primary-bg-hover: var(--win-face);
+}
+
+/* ===== Title bar ===== */
+
+.titlebar-wrapper {
+  font-weight: bold;
+}
+
+/* The app sets the inactive color with background-color, which drops gradients. */
+body.window-inactive .titlebar-wrapper {
+  background: var(--titlebar-inactive-bg);
+}
+
+.titlebar .window-controls-container {
+  align-items: center;
+  gap: 0;
+  margin-right: 2px;
+}
+
+.titlebar .titlebar-actions .window-controls-container button {
+  justify-content: center;
+  width: 16px;
+  height: 14px;
+  padding: 0;
+  color: var(--win-text);
+  background: var(--win-face);
+  box-shadow: var(--bevel-raised);
+  --btn-bg-hover: var(--win-face);
+  --btn-fg-hover: var(--win-text);
+}
+
+.titlebar .titlebar-actions .window-controls-container button:active {
+  box-shadow: var(--bevel-pressed);
+}
+
+.titlebar .titlebar-actions .window-controls-container button i {
+  font-size: 12px;
+}
+
+.titlebar .titlebar-actions #maximize,
+.titlebar .titlebar-actions #quit {
+  --btn-bg-hover: var(--win-face);
+}
+
+.titlebar .titlebar-actions #quit {
+  margin-left: 2px;
+}
+
+/* ===== Sidebars ===== */
+
+.global-items .nav-item:hover > span {
+  box-shadow: var(--bevel-thin-raised);
+}
+
+.global-items .nav-item.active > span {
+  box-shadow: var(--bevel-thin-sunken);
+}
+
+.list-group .list-item-btn {
+  border-radius: 0;
+}
+
+.list-group .list-item-btn.active,
+.list-group .list-item-btn.selected {
+  background: var(--win-highlight);
+  color: var(--win-highlight-text);
+  --btn-fg: var(--win-highlight-text);
+}
+
+/* ===== Tabs ===== */
+
+.core-tabs .nav-tabs .nav-link,
+.core-tabs .nav-tabs .nav-link.active {
+  border-radius: 0;
+  border-right: 0;
+  box-shadow: inset -1px 0 var(--bevel-darkest), inset 1px 1px var(--bevel-light),
+    inset -2px 0 var(--bevel-dark), inset 2px 2px var(--bevel-mid);
+}
+
+.core-tabs .nav-tabs .nav-link.active {
+  font-weight: bold;
+}
+
+/* ===== Menus ===== */
+
+x-menuitem:focus,
+x-menuitem[expanded],
+.flyout-nav .hovered,
+.tabulator-menu .tabulator-menu-item:hover,
+.tabulator-menu .tabulator-spreadsheet-menu-item-focused,
+.BksContextMenu-item:hover {
+  color: var(--win-highlight-text);
+}
+
+x-menuitem:focus x-label,
+x-menuitem:focus x-icon,
+x-menuitem[expanded] x-label,
+x-menuitem[expanded] x-icon {
+  color: var(--win-highlight-text);
+}
+
+/* ===== Tables ===== */
+
+/* The app rounds the top corners with a five-class selector. */
+.tabulator .tabulator-header .tabulator-col {
+  background: var(--win-face);
+  box-shadow: var(--bevel-raised);
+  border-radius: 0 !important;
+}
+
+.tabulator .tabulator-cell {
+  box-shadow: inset -1px -1px var(--win-gridline);
+}
+
+/* Tabulator adds tabulator-range-row-header after building the header, so
+   the corner never gets it. The row header is the only frozen column. */
+/* The app paints this over the corner, which would hide the bevel. */
+.tabulator .tabulator-header .tabulator-frozen::before {
+  background: transparent;
+}
+
+.tabulator .tabulator-header .tabulator-col.tabulator-frozen-left {
+  background: var(--win-face) !important;
+  box-shadow: var(--bevel-raised) !important;
+}
+
+/* Row headers get their colors from many app and ui-kit rules, some of them
+   !important, so each state is restated here to look like a column header. */
+.tabulator-cell.tabulator-range-row-header {
+  background: var(--win-face) !important;
+  box-shadow: var(--bevel-raised) !important;
+}
+
+.tabulator-row.tabulator-range-highlight
+  .tabulator-cell.tabulator-range-row-header {
+  color: var(--table-header-highlight-fg);
+  background: var(--table-header-highlight-bg) !important;
+}
+
+.tabulator-row.tabulator-range-selected
+  .tabulator-cell.tabulator-range-row-header {
+  color: var(--table-header-selected-fg);
+  background: var(--table-header-selected-bg) !important;
+}
+
+/* Filter fields use the flat button colors, which are gray here. */
+.table-filter .filter input,
+.table-filter .filter-group .select-wrap,
+.table-filter .filter-group .select-wrap:hover {
+  background: var(--win-window);
+  border: 0;
+  border-radius: 0;
+  box-shadow: var(--bevel-field);
+}
+
+.table-filter .filter input,
+.table-filter .filter input:focus {
+  box-shadow: var(--bevel-field);
+}
+
+.table-filter .filter-group .select-wrap > select {
+  box-shadow: none;
+}
+
+/* ===== Tooltips ===== */
+
+.tooltip .tooltip-inner {
+  color: var(--win-text);
+  background: var(--win-tooltip-bg);
+  border-radius: 0;
+  box-shadow: 0 0 0 1px var(--win-text);
+}
+
+/* ===== Dialogs ===== */
+
+.vue-dialog .dialog-c-title {
+  margin: -1.2rem -1.2rem 1.2rem;
+  padding: 3px 4px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  line-height: 18px;
+  color: var(--titlebar-fg);
+  background: var(--titlebar-bg);
+}
+
+/* Cards hardcode their own radius, so the panel token alone misses them. */
+.card,
+.card-flat,
+x-card,
+.connection-form-card,
+.advanced-connection-settings {
+  border-radius: 0 !important;
+}

@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "Pixelated MS Sans Serif";
+  src: url("ms_sans_serif.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Pixelated MS Sans Serif";
+  src: url("ms_sans_serif_bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Pixel Material Icons";
+  src: url("material_icons_pixel.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Pixel Material Icons Outlined";
+  src: url("material_icons_outlined_pixel.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}

@@ -1,0 +1,10 @@
+{
+  "id": "windows-98",
+  "name": "Windows 98",
+  "author": {
+    "name": "Beekeeper Studio",
+    "url": "https://www.beekeeperstudio.io"
+  },
+  "description": "Inspired by the classic Windows 98 theme. No, it's actually win 98.",
+  "version": "1.0.0"
+}
