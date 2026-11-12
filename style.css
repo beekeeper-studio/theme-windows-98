@@ -723,7 +723,9 @@ kbd {
 /* A text box is 21px tall: an 11px line, 3px of space, and the 2px edge. */
 input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]),
 select,
+select.form-control,
 textarea,
+textarea.form-control,
 .bk-form-input {
   height: 21px;
   padding: 0 4px;
@@ -773,7 +775,8 @@ textarea[disabled],
 }
 
 /* The app draws its own arrow with an !important background. */
-body select {
+body select,
+body select.form-control {
   padding: 0 20px 0 4px;
   border: 0;
   background: var(--win-combo), var(--input-bg) !important;
@@ -1417,7 +1420,8 @@ body.window-inactive .titlebar-wrapper {
 
 .list-group .list-item-btn,
 .list-group .sub-item {
-  height: 17px;
+  height: auto;
+  min-height: 17px;
   line-height: 17px;
   color: var(--win-text);
   border-radius: 0;
@@ -1519,6 +1523,117 @@ body.window-inactive .titlebar-wrapper {
 
 .sidebar.secondary-sidebar .sidebar-heading .actions {
   align-self: center;
+}
+
+/* Folder trees use the same boxes, 17px rows and dotted guides. */
+.BksTree .BksTree-folder,
+.BksTree .BksTree-folder:hover {
+  height: 17px;
+  padding-left: calc(var(--depth) * 16px);
+  padding-right: 3px;
+  color: var(--win-text);
+  background: none;
+  border-radius: 0;
+  cursor: default;
+}
+
+.BksTree .BksTree-folder .material-icons.expand-icon {
+  width: 16px;
+  height: 17px;
+  font-size: 0;
+  background: var(--win-tree-plus) center no-repeat;
+}
+
+.BksTree .BksTree-folder[data-expanded="true"] .material-icons.expand-icon {
+  background-image: var(--win-tree-minus);
+}
+
+.BksTree .BksTree-folder .material-icons.folder-icon {
+  width: 16px;
+  margin-left: 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+.BksTree .BksTree-folder .name {
+  margin-left: 3px;
+}
+
+.BksTree .BksTree-folder-empty {
+  padding-left: calc(var(--depth) * 16px + 19px);
+  margin-block: 0;
+  line-height: 17px;
+  opacity: 1;
+  color: var(--win-gray-text);
+}
+
+.BksTree .BksTree-node-folder.BksTree-node-expanded:not(.BksTree-node-empty)::before {
+  top: 17px;
+  left: calc(var(--depth) * 16px + 8px);
+  border-left: 1px dotted var(--bevel-dark);
+}
+
+.BksTree .BksTree-row[data-drop-target="inside"] {
+  color: var(--win-highlight-text);
+  background: var(--win-highlight);
+  border-radius: 0;
+}
+
+/* ----- Steps ----- */
+
+/* A wizard's steps are named in a row across the top. The current step is
+   bold, and a bar over each step fills as it is passed. */
+.stepper-box .top .nav-pills {
+  align-items: flex-start;
+  margin-top: 7px;
+  padding: 0;
+  background: none;
+}
+
+.stepper-box .top .nav-pills .progress {
+  height: 2px;
+  margin: 0 3px 2px;
+  border-radius: 0;
+  transition: none;
+}
+
+.stepper-box .top .nav-pills .progress.passed {
+  background-color: var(--win-highlight);
+}
+
+.stepper-box .top .nav-pills .progress:not(.passed),
+.stepper-box .top .nav-pills div:hover:not(.deactivated) .progress:not(.passed) {
+  background-color: var(--bevel-dark);
+}
+
+body .stepper-box .top .nav-pills .nav-pill,
+body .stepper-box .top .nav-pills .nav-pill.active {
+  height: 17px;
+  margin: 0;
+  padding: 0 8px;
+  line-height: 17px;
+  color: var(--win-text);
+  background: none;
+  box-shadow: none;
+  clip-path: none;
+}
+
+body .stepper-box .top .nav-pills .nav-pill.active {
+  font-weight: bold;
+}
+
+body .stepper-box .top .nav-pills .nav-pill.active::after {
+  display: none;
+}
+
+body .stepper-box .top .nav-pills .nav-pill.deactivated {
+  color: var(--win-gray-text);
+  text-shadow: 1px 1px var(--bevel-light);
+  cursor: default;
+}
+
+.stepper-box .bottom {
+  padding: 11px;
 }
 
 /* ===== Tabs ===== */
@@ -1720,6 +1835,44 @@ x-menu x-menuitem > x-icon,
 .BksContextMenu-item-leading-icon,
 .BksContextMenu-item-checkbox-icon {
   margin: 0;
+}
+
+/* Some menus put the icon inside the label. It moves out to the check
+   mark column all the same. */
+x-menu x-menuitem x-label {
+  display: flex;
+  align-items: center;
+  line-height: 17px;
+}
+
+x-menu x-menuitem:has(x-label > i) {
+  padding-left: 1px;
+}
+
+body x-menu x-menuitem x-label > i {
+  flex: none;
+  width: 16px !important;
+  height: 16px !important;
+  margin: 0;
+  font-size: 14px !important;
+  line-height: 16px !important;
+  text-align: center;
+}
+
+x-menu x-menuitem x-shortcut {
+  margin-left: 16px;
+  color: inherit;
+  opacity: 1;
+}
+
+/* A menu opens at the pointer, which can be between two pixels. */
+x-menu {
+  overflow-x: hidden;
+  will-change: transform;
+}
+
+.BksContextMenu-list {
+  will-change: transform;
 }
 
 .BksContextMenu-item-trailing-icon,
