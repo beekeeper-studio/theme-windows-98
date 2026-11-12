@@ -325,7 +325,7 @@
 
   --kbd-bg: var(--win-face);
   --kbd-fg: var(--win-text);
-  --kbd-shadow: var(--bevel-thin-raised);
+  --kbd-shadow: var(--bevel-raised);
 
   --badge-flat-bg: var(--win-face);
   --badge-flat-fg: var(--win-text);
@@ -588,14 +588,14 @@ x-buttons.selectbutton > x-button[toggled] {
 
 /* ===== Text ===== */
 
-/* Headings are the system font in bold, at the one size. */
+/* Bold is kept for window captions. Headings are regular text. */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-weight: bold;
+  font-weight: normal;
   line-height: 13px;
   color: var(--win-text);
 }
@@ -714,7 +714,13 @@ code {
   background: none;
 }
 
-kbd {
+/* A key is drawn as a small raised button. */
+kbd,
+.kbd,
+.shortcut > span {
+  padding: 1px 5px;
+  margin: 0 2px;
+  line-height: 13px;
   border-radius: 0;
 }
 
@@ -848,6 +854,7 @@ input[type="radio"]:checked {
   padding: 0;
   border: 0;
   border-radius: 0;
+  background-color: transparent;
   background-image: var(--win-radio);
   background-position: center;
   background-repeat: no-repeat;
@@ -917,14 +924,16 @@ x-switch[disabled][toggled] {
 /* ===== Scrollbars ===== */
 
 /* The app styles the same parts later in the cascade, so each selector
-   here starts from body to outrank it. */
-body ::-webkit-scrollbar {
+   here starts from body to outrank it. The ui-kit has its own copy. */
+body ::-webkit-scrollbar,
+body .BksUiKit ::-webkit-scrollbar {
   width: 16px;
   height: 16px;
 }
 
 /* The track is a checkerboard of the face and highlight colors. */
-body ::-webkit-scrollbar-track-piece {
+body ::-webkit-scrollbar-track-piece,
+body .BksUiKit ::-webkit-scrollbar-track-piece {
   background-color: var(--win-face);
   background-image: conic-gradient(
     var(--bevel-light) 25%,
@@ -936,7 +945,8 @@ body ::-webkit-scrollbar-track-piece {
   background-repeat: repeat !important;
 }
 
-body ::-webkit-scrollbar-thumb {
+body ::-webkit-scrollbar-thumb,
+body .BksUiKit ::-webkit-scrollbar-thumb {
   background: var(--win-face);
   border-radius: 0;
   box-shadow: var(--bevel-window);
@@ -944,7 +954,8 @@ body ::-webkit-scrollbar-thumb {
 
 /* The arrow buttons are in scrollbars.css. */
 
-body ::-webkit-scrollbar-corner {
+body ::-webkit-scrollbar-corner,
+body .BksUiKit ::-webkit-scrollbar-corner {
   background: var(--win-face);
 }
 
@@ -999,8 +1010,35 @@ body .global-status-bar .connection-button {
   line-height: 20px;
 }
 
-body .global-status-bar .connection-button {
-  margin: 3px 1px 3px 2px;
+body .global-status-bar .connection-button,
+body .global-status-bar .connection-button.default {
+  margin: 2px 1px 2px 2px;
+  color: var(--win-text);
+  background-color: var(--win-face);
+}
+
+.global-status-bar .badge,
+.global-status-bar .connection-button .badge {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Status text that the app makes a link is a pane like the rest. */
+.global-status-bar .statusbar a.btn.statusbar-item,
+.global-status-bar .statusbar a.btn.statusbar-item:hover {
+  min-width: 0;
+  box-shadow: var(--bevel-thin-sunken);
+}
+
+.global-status-bar .statusbar a.btn.statusbar-item i {
+  line-height: 16px;
+}
+
+.global-status-bar .statusbar .statusbar-item,
+.global-status-bar .statusbar .btn {
+  margin: 0 1px;
+  padding: 0 5px;
+  font-weight: normal;
 }
 
 /* Buttons are as tall as the panels beside them. */
@@ -1046,15 +1084,16 @@ body .global-status-bar .pending-changes > .btn[menu] {
 
 /* ===== Toolbars ===== */
 
-/* A toolbar is a gray band with a lit top edge and a shaded bottom edge. */
+/* A toolbar is a plain gray band. The wells above and below it supply
+   its edges. */
 body .query-editor .toolbar,
 body .query-editor .bottom-panel .toolbar {
   padding: 3px 4px;
   background: var(--win-face);
-  box-shadow: inset 0 1px var(--bevel-light), inset 0 -1px var(--bevel-dark);
+  box-shadow: none;
 }
 
-/* The editor's toolbar runs the full width, past the frame around the editor. */
+/* The editor's toolbar sits 2px under the editor. */
 body .query-editor .top-panel > .toolbar {
   margin: 2px 0 0;
 }
@@ -1180,7 +1219,7 @@ body.window-inactive .titlebar-wrapper {
 .titlebar .window-controls-container {
   align-items: center;
   gap: 0;
-  margin-right: 2px;
+  margin-right: 0;
 }
 
 .titlebar .titlebar-actions .titlebar-actions-extra > button.btn,
@@ -1280,24 +1319,58 @@ body.window-inactive .titlebar-wrapper {
 
 /* A table's data is a sunken well under its filter bar. */
 .tabletable .table-view-wrapper {
+  box-sizing: border-box;
   padding: 2px;
   background: var(--win-window);
   box-shadow: var(--bevel-field);
 }
 
-/* Text is only sharp on whole pixels, and panes sized by a splitter start
-   on fractions of one. These parts are painted on their own layer, which
-   the browser places on the pixel grid. */
-.core-tabs .tabs-header .nav-tabs,
-.core-tabs .tab-pane .table-filter,
+/* Text is only sharp on whole pixels, but centered labels, rem spacing and
+   panes sized by a splitter all land between them. will-change makes the
+   browser place an element on the pixel grid, so it is set on the small
+   parts that hold text. It has no effect on inline elements, and the app's
+   drop-down menus allow for it when they place themselves. */
+:is(
+  label,
+  button,
+  .btn,
+  x-button,
+  kbd,
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  input,
+  select,
+  textarea,
+  .badge,
+  .alert-body,
+  .label,
+  .list-heading,
+  .list-item-btn,
+  .sub-item,
+  .statusbar-item,
+  .connection-button,
+  .nav-link,
+  .nav-pill,
+  .mode-option,
+  .control-info,
+  .shortcut-item,
+  .tabulator-col,
+  .table-filter,
+  .toolbar,
+  .card-title,
+  .app-version,
+  .empty-placeholder
+):not(.titlebar *, .v--modal-box, :has(.v--modal-overlay)) {
+  will-change: transform;
+}
+
 .core-tabs .tab-pane .tabulator,
-.core-tabs .tab-pane .toolbar,
-.core-tabs .tab-pane .nav-pills,
-.core-tabs .tab-content .shortcut-hints,
-.sidebar .list-group,
-.sidebar .fixed,
-.global-status-bar .statusbar,
-.global-status-bar .connection-button-wrapper {
+.global-status-bar .statusbar {
   will-change: transform;
 }
 
@@ -1378,6 +1451,7 @@ body.window-inactive .titlebar-wrapper {
 }
 
 .sub {
+  font-weight: normal;
   text-transform: none;
 }
 
@@ -1437,6 +1511,11 @@ body.window-inactive .titlebar-wrapper {
   background: var(--win-highlight);
   color: var(--win-highlight-text);
   --btn-fg: var(--win-highlight-text);
+}
+
+.list-group .list-item-btn.active .item-icon,
+.list-group .list-item-btn.selected .item-icon {
+  color: inherit;
 }
 
 .list-group .list-item-btn.active .badge,
@@ -1619,7 +1698,7 @@ body .stepper-box .top .nav-pills .nav-pill.active {
 }
 
 body .stepper-box .top .nav-pills .nav-pill.active {
-  font-weight: bold;
+  text-decoration: underline;
 }
 
 body .stepper-box .top .nav-pills .nav-pill.active::after {
@@ -1643,6 +1722,10 @@ body .stepper-box .top .nav-pills .nav-pill.deactivated {
 .core-tabs .tabs-header {
   padding: 3px 2px 0;
   box-shadow: inset 0 -1px var(--bevel-light);
+}
+
+.core-tabs .tabs-header .nav-tabs {
+  height: 22px;
 }
 
 /* A tab is 19px tall, and the open one stands 2px taller. */
@@ -1680,6 +1763,10 @@ body .nav-pills .nav-pill.active::after,
 
 .core-tabs .nav-tabs .tab-title {
   padding-right: 20px;
+}
+
+.core-tabs .nav-tabs .tab-title .tab-title-scope {
+  font-style: normal;
 }
 
 .core-tabs .nav-tabs .nav-link .tab-action {
@@ -1793,6 +1880,7 @@ x-menu,
 
 .flyout-nav .menu-bar ul li a .shortcut {
   padding-left: 8px;
+  text-align: left;
 }
 
 .flyout-nav .menu-bar ul li a .label .material-icons {
@@ -1805,7 +1893,7 @@ x-menuitem,
 x-menu x-menuitem,
 .BksContextMenu-item {
   min-height: 17px;
-  padding: 0 16px 0 17px;
+  padding: 0 16px 0 20px;
   line-height: 17px;
   cursor: default;
 }
@@ -1817,7 +1905,12 @@ x-menu x-menuitem,
 /* An icon takes the place of the check mark column. */
 x-menu x-menuitem:has(> i, > x-icon),
 .BksContextMenu-item:has(> .BksContextMenu-item-leading-icon, > .BksContextMenu-item-checkbox-icon) {
-  padding-left: 1px;
+  padding-left: 0;
+}
+
+x-menu x-menuitem > i,
+x-menu x-menuitem > x-icon {
+  margin: 0 3px 0 0;
 }
 
 x-menu x-menuitem > i,
@@ -1825,7 +1918,6 @@ x-menu x-menuitem > x-icon,
 .BksContextMenu-item-icon-container i {
   width: 16px;
   height: 16px;
-  margin: 0;
   font-size: 14px;
   line-height: 16px;
   text-align: center;
@@ -1834,7 +1926,9 @@ x-menu x-menuitem > x-icon,
 
 .BksContextMenu-item-leading-icon,
 .BksContextMenu-item-checkbox-icon {
-  margin: 0;
+  flex: none;
+  width: 16px;
+  margin: 0 3px 0 1px;
 }
 
 /* Some menus put the icon inside the label. It moves out to the check
@@ -1853,7 +1947,7 @@ body x-menu x-menuitem x-label > i {
   flex: none;
   width: 16px !important;
   height: 16px !important;
-  margin: 0;
+  margin: 0 3px 0 0;
   font-size: 14px !important;
   line-height: 16px !important;
   text-align: center;
@@ -1903,15 +1997,16 @@ x-menu hr,
   background: none;
 }
 
-/* Windows 98 menus have no headings. This reads as a plain caption. */
+/* Windows 98 menus have no headings. This reads as an unavailable item. */
 .BksContextMenu-section-label,
 x-menu .BksContextMenu-section-label {
   min-height: 17px;
-  padding: 0 16px 0 17px;
+  padding: 0 16px 0 20px;
   line-height: 17px;
-  font-weight: bold;
+  font-weight: normal;
   text-transform: none;
-  color: var(--win-text);
+  color: var(--win-gray-text);
+  text-shadow: 1px 1px var(--bevel-light);
 }
 
 /* Unavailable items are engraved: gray text with a light edge below it. */
@@ -1931,7 +2026,7 @@ x-menuitem[disabled] > * {
 }
 
 /* The check mark and the submenu arrow are the original bitmaps. */
-.flyout-nav li a input[type="checkbox"]:checked + .label::before {
+body .flyout-nav li a input[type="checkbox"]:checked + .label::before {
   content: "";
   top: 5px;
   left: 5px;
@@ -2080,6 +2175,14 @@ body .cm-tooltip.cm-tooltip-autocomplete.BksTextEditor-hints ul li:hover {
   border-width: 2px;
 }
 
+.tabulator-range-fill-handle,
+.tabulator .tabulator-range-overlay .tabulator-range-handle {
+  width: 5px;
+  height: 5px;
+  border-radius: 0;
+  box-shadow: 0 0 0 1px var(--win-window);
+}
+
 /* Tabulator adds tabulator-range-row-header after building the header, so
    the corner never gets it. The row header is the only frozen column. */
 /* The app paints this over the corner, which would hide the bevel. */
@@ -2215,14 +2318,14 @@ body .schema-builder .tabulator-row.tabulator-row-even {
 
 body .table-properties .table-properties-wrap .tabulator-row .tabulator-cell :is(pre, input:not([type="checkbox"])),
 body .schema-builder .tabulator-row .tabulator-cell :is(pre, input:not([type="checkbox"])) {
-  height: 19px;
-  min-height: 19px;
-  line-height: 18px !important;
+  height: 17px;
+  min-height: 17px;
+  line-height: 16px !important;
 }
 
 body .table-properties .table-properties-wrap .tabulator-row .tabulator-cell .tabulator-bks-checkbox,
 body .schema-builder .tabulator-row .tabulator-cell .tabulator-bks-checkbox {
-  height: 19px;
+  height: 17px;
 }
 
 body .table-properties .table-properties-wrap .tabulator-row .tabulator-cell.no-padding > *,
@@ -2232,10 +2335,10 @@ body .schema-builder .tabulator-row .tabulator-cell.no-padding > * {
 
 body .table-properties .table-properties-wrap .tabulator-row .tabulator-cell,
 body .schema-builder .tabulator-row .tabulator-cell {
-  height: 19px;
-  min-height: 19px;
+  height: 17px;
+  min-height: 17px;
   padding: 0 3px;
-  line-height: 18px;
+  line-height: 16px;
   color: var(--win-text);
 }
 
@@ -2317,17 +2420,17 @@ body .schema-builder .tabulator-row .tabulator-cell {
 /* Every modal is a window: a title bar is painted across the top of the box,
    inside the bevel, and the modal's own title is laid over it. */
 body .v--modal {
-  padding-top: 20px !important;
-  background: var(--titlebar-bg) 2px 2px / calc(100% - 4px) 18px no-repeat,
+  padding: 22px 3px 3px !important;
+  background: var(--titlebar-bg) 3px 3px / calc(100% - 6px) 18px no-repeat,
     var(--panel-bg);
 }
 
 body .vue-dialog .v--modal .dialog-c-title,
 body .base-modal-root .v--modal .base-modal-header {
   position: absolute;
-  top: 2px;
-  left: 2px;
-  right: 2px;
+  top: 3px;
+  left: 3px;
+  right: 3px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -2362,8 +2465,8 @@ body .base-modal-root .v--modal .base-modal-title :is(a, i, span) {
 body .vue-dialog .v--modal .close-btn,
 body .base-modal-root .v--modal .base-modal-close {
   position: absolute;
-  top: 4px;
-  right: 4px;
+  top: 5px;
+  right: 5px;
   z-index: 1;
   width: 16px;
   min-width: 16px;
@@ -2427,7 +2530,18 @@ body .v--modal .base-modal-body .toolbar:has(.filter-wrap) {
   box-shadow: none;
 }
 
+/* The list scrolls inside its own frame, not the dialog. */
+body .v--modal .base-modal .base-modal-body:has(> .connection-types) {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
 body .v--modal .base-modal-body .connection-types {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
   padding: 2px;
   background: var(--win-window);
   box-shadow: var(--bevel-field);
@@ -2518,13 +2632,16 @@ body .v--modal .connection-types .connection-type .database-icon {
   font-weight: normal;
 }
 
-/* A theme's preview is a picture in a thin sunken frame. */
-body .v--modal label.theme-item .theme-preview-frame {
-  padding: 1px;
+/* A theme's preview is a picture in a sunken frame. The radio button
+   alone shows which one is chosen. */
+body .v--modal label.theme-item .theme-preview-frame,
+body .v--modal label.theme-item.selected .theme-preview-frame,
+body .v--modal label.theme-item:has(input:focus-visible) .theme-preview-frame {
+  padding: 2px;
   border: 0;
   border-radius: 0;
   outline: none;
-  box-shadow: var(--bevel-thin-sunken);
+  box-shadow: var(--bevel-field);
 }
 
 body .v--modal label.theme-item .theme-preview-frame > * {
@@ -2547,18 +2664,19 @@ x-card,
 .connection-main .connection-form-card,
 .connection-main .connection-form-card.card-flat[class*="connection-label-color"] {
   position: relative;
-  padding: 31px 13px 13px;
-  background: var(--titlebar-bg) 2px 2px / calc(100% - 4px) 18px no-repeat,
+  padding: 32px 14px 14px;
+  background: var(--titlebar-bg) 3px 3px / calc(100% - 6px) 18px no-repeat,
     var(--win-face);
   box-shadow: var(--bevel-window);
 }
 
 .connection-main .connection-form-card .connection-heading .card-title {
   position: absolute;
-  top: 2px;
-  left: 5px;
-  right: 5px;
+  top: 3px;
+  left: 6px;
+  right: 6px;
   overflow: hidden;
+  font-weight: bold;
   line-height: 18px;
   white-space: nowrap;
   color: var(--titlebar-fg);
@@ -2571,16 +2689,17 @@ x-card,
 
 /* The label color is a band under the caption. */
 .connection-main .connection-form-card.card-flat[class*="connection-label-color"] {
-  padding-top: 37px;
+  padding-top: 38px;
 }
 
 .connection-main .connection-form-card.card-flat[class*="connection-label-color"]::before {
-  inset: 20px 2px auto;
+  inset: 21px 3px auto;
   height: 6px;
 }
 
 /* The connection type is a drop-down list like the ones below it. */
 .connection-main .connection-type-wrapper .label {
+  padding: 0;
   margin-bottom: 3px;
   line-height: 13px;
 }
@@ -2599,8 +2718,39 @@ body .connection-main .connection-type-wrapper .connection-type-btn:is(:hover, :
   cursor: default;
 }
 
-.connection-main .connection-type-btn > .material-icons:last-child {
+.connection-main .connection-type-wrapper .connection-type-btn::after,
+.connection-main .connection-type-wrapper .connection-type-btn > .material-icons {
   display: none;
+}
+
+/* The line above Save Connection is etched. */
+.connection-main .save-connection {
+  border-top: 1px solid var(--bevel-dark);
+  box-shadow: inset 0 1px var(--bevel-light);
+}
+
+.connection-sidebar .tab-content > .fixed {
+  padding: 0 4px;
+}
+
+.connection-sidebar .filter,
+.connection-sidebar .filter .filter-wrap {
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+}
+
+/* The open workspace is a held-in button on the rail. */
+.interface-wrap .global-items.workspace-items .nav-item.active .avatar {
+  background-color: var(--win-face);
+  background-image: conic-gradient(
+    var(--bevel-light) 25%,
+    transparent 0 50%,
+    var(--bevel-light) 0 75%,
+    transparent 0
+  );
+  background-size: 2px 2px;
+  box-shadow: var(--bevel-pressed);
 }
 
 /* Label colors are swatches in a palette, and the chosen one is framed. */
