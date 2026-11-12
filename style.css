@@ -2127,6 +2127,66 @@ body .cm-tooltip.cm-tooltip-autocomplete.BksTextEditor-hints ul li:hover {
   font-weight: normal;
 }
 
+/* The app makes the sort button 24px tall, which pushes the label down and
+   out of the 18px header. Everything in the header keeps to its height and
+   is centered on it. The label stays at the left: centered text lands
+   between pixels and blurs. */
+.tabulator .tabulator-header .tabulator-col .tabulator-col-content .tabulator-col-title-holder,
+.tabulator .tabulator-header .tabulator-col .tabulator-col-content .tabulator-col-title-holder .tabulator-col-title {
+  height: 18px;
+}
+
+.tabulator .tabulator-header .tabulator-col .tabulator-col-content .tabulator-col-title-holder .tabulator-col-title .title {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 0;
+  line-height: 18px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tabulator .tabulator-header .tabulator-col .column-data-type {
+  margin-left: 4px;
+  color: var(--win-gray-text);
+}
+
+/* The key and lock marks are centered on the row like a 16px icon. */
+.tabulator .tabulator-header .tabulator-col:is(.primary-key, .foreign-key, .read-only-field, .generated-column)::before {
+  align-items: center;
+  height: 18px;
+  line-height: 18px;
+  color: var(--win-text);
+}
+
+/* The sort mark is the 7 by 4 arrow of a scrollbar button, shown only on
+   the column the rows are sorted by. */
+.tabulator .tabulator-header .tabulator-col .tabulator-col-content .tabulator-col-title-holder .tabulator-col-title .tabulator-col-sorter.tabulator-col-sorter-element {
+  flex: none;
+  width: 13px;
+  height: 18px;
+  min-height: 18px;
+  margin-left: 0;
+  border-radius: 0;
+  background: none;
+}
+
+.tabulator .tabulator-header .tabulator-col .tabulator-col-content .tabulator-col-sorter .tabulator-arrow,
+.tabulator .tabulator-header .tabulator-col.tabulator-sortable[aria-sort] .tabulator-col-content .tabulator-col-sorter .tabulator-arrow {
+  position: static;
+  width: 7px;
+  height: 4px;
+  border: 0 !important;
+  background: var(--win-arrow-up) center no-repeat;
+}
+
+.tabulator .tabulator-header .tabulator-col.tabulator-sortable[aria-sort="descending"] .tabulator-col-content .tabulator-col-sorter .tabulator-arrow {
+  background-image: var(--win-arrow-down);
+}
+
+.tabulator .tabulator-header .tabulator-col.tabulator-sortable[aria-sort="none"] .tabulator-col-content .tabulator-col-sorter .tabulator-arrow {
+  visibility: hidden;
+}
+
 /* The header of a column or row that holds the selection is bold. */
 .tabulator .tabulator-header .tabulator-col.tabulator-range-highlight .tabulator-col-title,
 .tabulator-row.tabulator-range-highlight .tabulator-cell.tabulator-range-row-header {
