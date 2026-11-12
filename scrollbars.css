@@ -1,0 +1,43 @@
+/* Scrollbar arrow buttons.
+
+   The app wraps a theme's style.css in @scope, and Chromium does not match
+   the state selectors of scrollbar parts (:horizontal, :increment, :start
+   and so on) inside @scope. An imported stylesheet is left unscoped, so
+   these rules live here, and name the theme's class to stay out of the
+   previews of other themes. */
+
+/* One 16px arrow button at each end of the bar. */
+body.theme-windows-98 ::-webkit-scrollbar-button {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: var(--win-face) center no-repeat;
+  box-shadow: var(--bevel-window);
+}
+
+body.theme-windows-98 ::-webkit-scrollbar-button:start:increment,
+body.theme-windows-98 ::-webkit-scrollbar-button:end:decrement {
+  display: none;
+}
+
+body.theme-windows-98 ::-webkit-scrollbar-button:vertical:decrement {
+  background-image: var(--win-arrow-up);
+}
+
+body.theme-windows-98 ::-webkit-scrollbar-button:vertical:increment {
+  background-image: var(--win-arrow-down);
+}
+
+body.theme-windows-98 ::-webkit-scrollbar-button:horizontal:decrement {
+  background-image: var(--win-arrow-left);
+}
+
+body.theme-windows-98 ::-webkit-scrollbar-button:horizontal:increment {
+  background-image: var(--win-arrow-right);
+}
+
+/* A pressed arrow button goes flat, and its arrow moves down and right. */
+body.theme-windows-98 ::-webkit-scrollbar-button:active {
+  background-position: calc(50% + 1px) calc(50% + 1px);
+  box-shadow: inset 0 0 0 1px var(--bevel-dark);
+}
