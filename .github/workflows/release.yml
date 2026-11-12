@@ -56,7 +56,7 @@ jobs:
         id: create_zip
         run: |
           ZIP_NAME="${{ steps.project_info.outputs.project_id }}-${{ steps.project_info.outputs.version }}.zip"
-          zip -r "$ZIP_NAME" manifest.json style.css README.md fonts
+          zip -r "$ZIP_NAME" manifest.json style.css scrollbars.css README.md fonts
           echo "zip_name=$ZIP_NAME" >> $GITHUB_OUTPUT
 
       - name: Create GitHub Release

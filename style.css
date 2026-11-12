@@ -1,4 +1,5 @@
 @import "fonts/fonts.css";
+@import "scrollbars.css";
 
 .light-theme {
   --background: #c0c0c0;
@@ -35,6 +36,22 @@
   --titlebar-inactive-fg: #c0c0c0;
 
   --win-arrow-down: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='7' height='4' shape-rendering='crispEdges'><path fill='black' d='M0 0h7v1H6v1H5v1H4v1H3V3H2V2H1V1H0z'/></svg>");
+
+  --win-arrow-up: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='7' height='4' shape-rendering='crispEdges'><path fill='black' d='M3 0h1v1h1v1h1v1h1v1H0V3h1V2h1V1h1z'/></svg>");
+  --win-arrow-left: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='7' shape-rendering='crispEdges'><path fill='black' d='M3 0h1v7H3zM2 1h1v5H2zM1 2h1v3H1zM0 3h1v1H0z'/></svg>");
+  --win-arrow-right: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='7' shape-rendering='crispEdges'><path fill='black' d='M0 0h1v7H0zM1 1h1v5H1zM2 2h1v3H2zM3 3h1v1H3z'/></svg>");
+
+  --win-check: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='7' height='7' shape-rendering='crispEdges'><path fill='black' d='M6 0h1v1H6zM5 1h2v1H5zM0 2h1v1H0zM4 2h3v1H4zM0 3h2v1H0zM3 3h3v1H3zM0 4h5v1H0zM1 5h3v1H1zM2 6h1v1H2z'/></svg>");
+  --win-check-disabled: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='7' height='7' shape-rendering='crispEdges'><path fill='gray' d='M6 0h1v1H6zM5 1h2v1H5zM0 2h1v1H0zM4 2h3v1H4zM0 3h2v1H0zM3 3h3v1H3zM0 4h5v1H0zM1 5h3v1H1zM2 6h1v1H2z'/></svg>");
+  /* A radio button is a 12px bitmap: a round sunken well, and its dot. */
+  --win-radio: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' shape-rendering='crispEdges'><path fill='%23808080' d='M4 0h4v1H4zM2 1h2v1H2zM8 1h2v1H8zM1 2h1v1H1zM1 3h1v1H1zM0 4h1v1H0zM0 5h1v1H0zM0 6h1v1H0zM0 7h1v1H0zM1 8h1v1H1zM1 9h1v1H1z'/><path fill='%230a0a0a' d='M4 1h4v1H4zM2 2h2v1H2zM8 2h2v1H8zM2 3h1v1H2zM1 4h1v1H1zM1 5h1v1H1zM1 6h1v1H1zM1 7h1v1H1zM2 8h1v1H2z'/><path fill='%23ffffff' d='M4 2h4v1H4zM3 3h6v1H3zM2 4h8v1H2zM2 5h8v1H2zM2 6h8v1H2zM2 7h8v1H2zM3 8h6v1H3zM4 9h4v1H4z'/><path fill='%23ffffff' d='M10 2h1v1H10zM10 3h1v1H10zM11 4h1v1H11zM11 5h1v1H11zM11 6h1v1H11zM11 7h1v1H11zM10 8h1v1H10zM10 9h1v1H10zM2 10h2v1H2zM8 10h2v1H8zM4 11h4v1H4z'/><path fill='%23dfdfdf' d='M9 3h1v1H9zM10 4h1v1H10zM10 5h1v1H10zM10 6h1v1H10zM10 7h1v1H10zM9 8h1v1H9zM2 9h2v1H2zM8 9h2v1H8zM4 10h4v1H4z'/></svg>");
+  --win-radio-checked: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' shape-rendering='crispEdges'><path fill='%23808080' d='M4 0h4v1H4zM2 1h2v1H2zM8 1h2v1H8zM1 2h1v1H1zM1 3h1v1H1zM0 4h1v1H0zM0 5h1v1H0zM0 6h1v1H0zM0 7h1v1H0zM1 8h1v1H1zM1 9h1v1H1z'/><path fill='%230a0a0a' d='M4 1h4v1H4zM2 2h2v1H2zM8 2h2v1H8zM2 3h1v1H2zM1 4h1v1H1zM1 5h1v1H1zM1 6h1v1H1zM1 7h1v1H1zM2 8h1v1H2z'/><path fill='%23ffffff' d='M4 2h4v1H4zM3 3h6v1H3zM2 4h8v1H2zM2 5h8v1H2zM2 6h8v1H2zM2 7h8v1H2zM3 8h6v1H3zM4 9h4v1H4z'/><path fill='%23ffffff' d='M10 2h1v1H10zM10 3h1v1H10zM11 4h1v1H11zM11 5h1v1H11zM11 6h1v1H11zM11 7h1v1H11zM10 8h1v1H10zM10 9h1v1H10zM2 10h2v1H2zM8 10h2v1H8zM4 11h4v1H4z'/><path fill='%23dfdfdf' d='M9 3h1v1H9zM10 4h1v1H10zM10 5h1v1H10zM10 6h1v1H10zM10 7h1v1H10zM9 8h1v1H9zM2 9h2v1H2zM8 9h2v1H8zM4 10h4v1H4z'/><path fill='black' d='M5 4h2v1H5zM4 5h4v2H4zM5 7h2v1H5z'/></svg>");
+  --win-radio-disabled: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' shape-rendering='crispEdges'><path fill='%23808080' d='M4 0h4v1H4zM2 1h2v1H2zM8 1h2v1H8zM1 2h1v1H1zM1 3h1v1H1zM0 4h1v1H0zM0 5h1v1H0zM0 6h1v1H0zM0 7h1v1H0zM1 8h1v1H1zM1 9h1v1H1z'/><path fill='%230a0a0a' d='M4 1h4v1H4zM2 2h2v1H2zM8 2h2v1H8zM2 3h1v1H2zM1 4h1v1H1zM1 5h1v1H1zM1 6h1v1H1zM1 7h1v1H1zM2 8h1v1H2z'/><path fill='%23c0c0c0' d='M4 2h4v1H4zM3 3h6v1H3zM2 4h8v1H2zM2 5h8v1H2zM2 6h8v1H2zM2 7h8v1H2zM3 8h6v1H3zM4 9h4v1H4z'/><path fill='%23ffffff' d='M10 2h1v1H10zM10 3h1v1H10zM11 4h1v1H11zM11 5h1v1H11zM11 6h1v1H11zM11 7h1v1H11zM10 8h1v1H10zM10 9h1v1H10zM2 10h2v1H2zM8 10h2v1H8zM4 11h4v1H4z'/><path fill='%23dfdfdf' d='M9 3h1v1H9zM10 4h1v1H10zM10 5h1v1H10zM10 6h1v1H10zM10 7h1v1H10zM9 8h1v1H9zM2 9h2v1H2zM8 9h2v1H8zM4 10h4v1H4z'/></svg>");
+  --win-radio-checked-disabled: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' shape-rendering='crispEdges'><path fill='%23808080' d='M4 0h4v1H4zM2 1h2v1H2zM8 1h2v1H8zM1 2h1v1H1zM1 3h1v1H1zM0 4h1v1H0zM0 5h1v1H0zM0 6h1v1H0zM0 7h1v1H0zM1 8h1v1H1zM1 9h1v1H1z'/><path fill='%230a0a0a' d='M4 1h4v1H4zM2 2h2v1H2zM8 2h2v1H8zM2 3h1v1H2zM1 4h1v1H1zM1 5h1v1H1zM1 6h1v1H1zM1 7h1v1H1zM2 8h1v1H2z'/><path fill='%23c0c0c0' d='M4 2h4v1H4zM3 3h6v1H3zM2 4h8v1H2zM2 5h8v1H2zM2 6h8v1H2zM2 7h8v1H2zM3 8h6v1H3zM4 9h4v1H4z'/><path fill='%23ffffff' d='M10 2h1v1H10zM10 3h1v1H10zM11 4h1v1H11zM11 5h1v1H11zM11 6h1v1H11zM11 7h1v1H11zM10 8h1v1H10zM10 9h1v1H10zM2 10h2v1H2zM8 10h2v1H8zM4 11h4v1H4z'/><path fill='%23dfdfdf' d='M9 3h1v1H9zM10 4h1v1H10zM10 5h1v1H10zM10 6h1v1H10zM10 7h1v1H10zM9 8h1v1H9zM2 9h2v1H2zM8 9h2v1H8zM4 10h4v1H4z'/><path fill='gray' d='M5 4h2v1H5zM4 5h4v2H4zM5 7h2v1H5z'/></svg>");
+
+  /* The expand and collapse boxes of a tree view */
+  --win-tree-plus: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='9' height='9' shape-rendering='crispEdges'><path fill='%23808080' d='M0 0h9v9H0z'/><path fill='%23ffffff' d='M1 1h7v7H1z'/><path fill='%23000000' d='M2 4h5v1H2zM4 2h1v5H4z'/></svg>");
+  --win-tree-minus: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='9' height='9' shape-rendering='crispEdges'><path fill='%23808080' d='M0 0h9v9H0z'/><path fill='%23ffffff' d='M1 1h7v7H1z'/><path fill='%23000000' d='M2 4h5v1H2z'/></svg>");
 
   /* Visual C++ 6 editor colors */
   --syntax-keyword: #0000ff;
@@ -85,6 +102,22 @@
   --titlebar-inactive-fg: #a0a0a0;
 
   --win-arrow-down: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='7' height='4' shape-rendering='crispEdges'><path fill='white' d='M0 0h7v1H6v1H5v1H4v1H3V3H2V2H1V1H0z'/></svg>");
+
+  --win-arrow-up: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='7' height='4' shape-rendering='crispEdges'><path fill='white' d='M3 0h1v1h1v1h1v1h1v1H0V3h1V2h1V1h1z'/></svg>");
+  --win-arrow-left: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='7' shape-rendering='crispEdges'><path fill='white' d='M3 0h1v7H3zM2 1h1v5H2zM1 2h1v3H1zM0 3h1v1H0z'/></svg>");
+  --win-arrow-right: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='7' shape-rendering='crispEdges'><path fill='white' d='M0 0h1v7H0zM1 1h1v5H1zM2 2h1v3H2zM3 3h1v1H3z'/></svg>");
+
+  --win-check: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='7' height='7' shape-rendering='crispEdges'><path fill='white' d='M6 0h1v1H6zM5 1h2v1H5zM0 2h1v1H0zM4 2h3v1H4zM0 3h2v1H0zM3 3h3v1H3zM0 4h5v1H0zM1 5h3v1H1zM2 6h1v1H2z'/></svg>");
+  --win-check-disabled: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='7' height='7' shape-rendering='crispEdges'><path fill='gray' d='M6 0h1v1H6zM5 1h2v1H5zM0 2h1v1H0zM4 2h3v1H4zM0 3h2v1H0zM3 3h3v1H3zM0 4h5v1H0zM1 5h3v1H1zM2 6h1v1H2z'/></svg>");
+  /* A radio button is a 12px bitmap: a round sunken well, and its dot. */
+  --win-radio: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' shape-rendering='crispEdges'><path fill='%231a1a1a' d='M4 0h4v1H4zM2 1h2v1H2zM8 1h2v1H8zM1 2h1v1H1zM1 3h1v1H1zM0 4h1v1H0zM0 5h1v1H0zM0 6h1v1H0zM0 7h1v1H0zM1 8h1v1H1zM1 9h1v1H1z'/><path fill='%23000000' d='M4 1h4v1H4zM2 2h2v1H2zM8 2h2v1H8zM2 3h1v1H2zM1 4h1v1H1zM1 5h1v1H1zM1 6h1v1H1zM1 7h1v1H1zM2 8h1v1H2z'/><path fill='%231e1e1e' d='M4 2h4v1H4zM3 3h6v1H3zM2 4h8v1H2zM2 5h8v1H2zM2 6h8v1H2zM2 7h8v1H2zM3 8h6v1H3zM4 9h4v1H4z'/><path fill='%236a6a6a' d='M10 2h1v1H10zM10 3h1v1H10zM11 4h1v1H11zM11 5h1v1H11zM11 6h1v1H11zM11 7h1v1H11zM10 8h1v1H10zM10 9h1v1H10zM2 10h2v1H2zM8 10h2v1H8zM4 11h4v1H4z'/><path fill='%23555555' d='M9 3h1v1H9zM10 4h1v1H10zM10 5h1v1H10zM10 6h1v1H10zM10 7h1v1H10zM9 8h1v1H9zM2 9h2v1H2zM8 9h2v1H8zM4 10h4v1H4z'/></svg>");
+  --win-radio-checked: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' shape-rendering='crispEdges'><path fill='%231a1a1a' d='M4 0h4v1H4zM2 1h2v1H2zM8 1h2v1H8zM1 2h1v1H1zM1 3h1v1H1zM0 4h1v1H0zM0 5h1v1H0zM0 6h1v1H0zM0 7h1v1H0zM1 8h1v1H1zM1 9h1v1H1z'/><path fill='%23000000' d='M4 1h4v1H4zM2 2h2v1H2zM8 2h2v1H8zM2 3h1v1H2zM1 4h1v1H1zM1 5h1v1H1zM1 6h1v1H1zM1 7h1v1H1zM2 8h1v1H2z'/><path fill='%231e1e1e' d='M4 2h4v1H4zM3 3h6v1H3zM2 4h8v1H2zM2 5h8v1H2zM2 6h8v1H2zM2 7h8v1H2zM3 8h6v1H3zM4 9h4v1H4z'/><path fill='%236a6a6a' d='M10 2h1v1H10zM10 3h1v1H10zM11 4h1v1H11zM11 5h1v1H11zM11 6h1v1H11zM11 7h1v1H11zM10 8h1v1H10zM10 9h1v1H10zM2 10h2v1H2zM8 10h2v1H8zM4 11h4v1H4z'/><path fill='%23555555' d='M9 3h1v1H9zM10 4h1v1H10zM10 5h1v1H10zM10 6h1v1H10zM10 7h1v1H10zM9 8h1v1H9zM2 9h2v1H2zM8 9h2v1H8zM4 10h4v1H4z'/><path fill='white' d='M5 4h2v1H5zM4 5h4v2H4zM5 7h2v1H5z'/></svg>");
+  --win-radio-disabled: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' shape-rendering='crispEdges'><path fill='%231a1a1a' d='M4 0h4v1H4zM2 1h2v1H2zM8 1h2v1H8zM1 2h1v1H1zM1 3h1v1H1zM0 4h1v1H0zM0 5h1v1H0zM0 6h1v1H0zM0 7h1v1H0zM1 8h1v1H1zM1 9h1v1H1z'/><path fill='%23000000' d='M4 1h4v1H4zM2 2h2v1H2zM8 2h2v1H8zM2 3h1v1H2zM1 4h1v1H1zM1 5h1v1H1zM1 6h1v1H1zM1 7h1v1H1zM2 8h1v1H2z'/><path fill='%233c3c3c' d='M4 2h4v1H4zM3 3h6v1H3zM2 4h8v1H2zM2 5h8v1H2zM2 6h8v1H2zM2 7h8v1H2zM3 8h6v1H3zM4 9h4v1H4z'/><path fill='%236a6a6a' d='M10 2h1v1H10zM10 3h1v1H10zM11 4h1v1H11zM11 5h1v1H11zM11 6h1v1H11zM11 7h1v1H11zM10 8h1v1H10zM10 9h1v1H10zM2 10h2v1H2zM8 10h2v1H8zM4 11h4v1H4z'/><path fill='%23555555' d='M9 3h1v1H9zM10 4h1v1H10zM10 5h1v1H10zM10 6h1v1H10zM10 7h1v1H10zM9 8h1v1H9zM2 9h2v1H2zM8 9h2v1H8zM4 10h4v1H4z'/></svg>");
+  --win-radio-checked-disabled: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' shape-rendering='crispEdges'><path fill='%231a1a1a' d='M4 0h4v1H4zM2 1h2v1H2zM8 1h2v1H8zM1 2h1v1H1zM1 3h1v1H1zM0 4h1v1H0zM0 5h1v1H0zM0 6h1v1H0zM0 7h1v1H0zM1 8h1v1H1zM1 9h1v1H1z'/><path fill='%23000000' d='M4 1h4v1H4zM2 2h2v1H2zM8 2h2v1H8zM2 3h1v1H2zM1 4h1v1H1zM1 5h1v1H1zM1 6h1v1H1zM1 7h1v1H1zM2 8h1v1H2z'/><path fill='%233c3c3c' d='M4 2h4v1H4zM3 3h6v1H3zM2 4h8v1H2zM2 5h8v1H2zM2 6h8v1H2zM2 7h8v1H2zM3 8h6v1H3zM4 9h4v1H4z'/><path fill='%236a6a6a' d='M10 2h1v1H10zM10 3h1v1H10zM11 4h1v1H11zM11 5h1v1H11zM11 6h1v1H11zM11 7h1v1H11zM10 8h1v1H10zM10 9h1v1H10zM2 10h2v1H2zM8 10h2v1H8zM4 11h4v1H4z'/><path fill='%23555555' d='M9 3h1v1H9zM10 4h1v1H10zM10 5h1v1H10zM10 6h1v1H10zM10 7h1v1H10zM9 8h1v1H9zM2 9h2v1H2zM8 9h2v1H8zM4 10h4v1H4z'/><path fill='gray' d='M5 4h2v1H5zM4 5h4v2H4zM5 7h2v1H5z'/></svg>");
+
+  /* The expand and collapse boxes of a tree view */
+  --win-tree-plus: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='9' height='9' shape-rendering='crispEdges'><path fill='%238a8a8a' d='M0 0h9v9H0z'/><path fill='%231e1e1e' d='M1 1h7v7H1z'/><path fill='%23ffffff' d='M2 4h5v1H2zM4 2h1v5H4z'/></svg>");
+  --win-tree-minus: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='9' height='9' shape-rendering='crispEdges'><path fill='%238a8a8a' d='M0 0h9v9H0z'/><path fill='%231e1e1e' d='M1 1h7v7H1z'/><path fill='%23ffffff' d='M2 4h5v1H2z'/></svg>");
 
   /* The bright half of the 16-color VGA palette */
   --syntax-keyword: #55ffff;
@@ -153,6 +186,7 @@
   --win-glyph-maximize: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='10' shape-rendering='crispEdges'><path fill-rule='evenodd' d='M1 0h9v9H1zM2 2v6h7V2z'/></svg>");
   --win-glyph-restore: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='10' shape-rendering='crispEdges'><path d='M3 0h6v2H3zM8 2h1v4H8zM7 5h1v1H7zM3 2h1v1H3zM1 3h6v2H1zM1 5h1v4H1zM6 5h1v4H6zM2 8h4v1H2z'/></svg>");
   --win-glyph-close: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='10' shape-rendering='crispEdges'><path d='M2 1h2v1H2zM8 1h2v1H8zM3 2h2v1H3zM7 2h2v1H7zM4 3h4v1H4zM5 4h2v1H5zM4 5h4v1H4zM3 6h2v1H3zM7 6h2v1H7zM2 7h2v1H2zM8 7h2v1H8z'/></svg>");
+  --win-glyph-check: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='7' height='7' shape-rendering='crispEdges'><path d='M6 0h1v1H6zM5 1h2v1H5zM0 2h1v1H0zM4 2h3v1H4zM0 3h2v1H0zM3 3h3v1H3zM0 4h5v1H0zM1 5h3v1H1zM2 6h1v1H2z'/></svg>");
   --win-glyph-hourglass: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='16' shape-rendering='crispEdges'><path d='M1 0h10v2H1zM1 14h10v2H1zM2 2h1v2H2zM9 2h1v2H9zM3 4h1v1H3zM8 4h1v1H8zM4 5h1v1H4zM7 5h1v1H7zM5 6h2v4H5zM4 10h1v1H4zM7 10h1v1H7zM3 11h1v1H3zM8 11h1v1H8zM2 12h1v2H2zM9 12h1v2H9zM4 3h4v1H4zM5 11h2v1H5zM4 12h4v2H4z'/></svg>");
 
   --font-family: "Pixelated MS Sans Serif", "MS Sans Serif",
@@ -160,9 +194,10 @@
   font-family: var(--font-family);
   -webkit-font-smoothing: none;
 
-  /* Fixedsys if it is installed, or else the Courier of Visual C++ 6 */
-  --font-family-mono: "Fixedsys Excelsior 3.01", "Fixedsys Excelsior",
-    Fixedsys, "Courier New", Courier, monospace;
+  /* Courier New, the editor font of Visual C++ 6. Fixedsys is left out: it
+     is a bitmap font that is only sharp at 16px, and the editor's size is
+     the user's to set. */
+  --font-family-mono: "Courier New", Courier, monospace;
   --editor-font-family: var(--font-family-mono);
 
   /* App */
@@ -253,6 +288,12 @@
   --notif-close-fg-hover: var(--win-text);
 
   --alert-border-radius: 0;
+  --alert-bg: var(--win-face);
+  --alert-fg: var(--win-text);
+
+  /* A dialog does not dim the window behind it. */
+  --overlay-bg: transparent;
+  --overlay-subtle-bg: transparent;
 
   /* Nav pills */
   --nav-pills-shadow: inset 0 -1px var(--bevel-light);
@@ -275,15 +316,17 @@
   --table-header-selected-fg: var(--win-highlight-text);
   --table-row-header-shadow: 1px 0 var(--bevel-dark);
   --table-row-odd-bg: transparent;
+  --table-row-even-bg: transparent;
   --table-cell-bg-hover: transparent;
   --table-cell-selected-bg: rgb(from var(--win-highlight) r g b / 20%);
-  --table-range-border: var(--win-highlight);
-  --table-range-handle-bg: var(--win-highlight);
+  --table-range-border: var(--win-text);
+  --table-range-handle-bg: var(--win-text);
+  --table-cell-readonly-fg: var(--win-text);
   --table-filter-bg: var(--win-face);
 
   --kbd-bg: var(--win-face);
   --kbd-fg: var(--win-text);
-  --kbd-shadow: var(--bevel-thin-raised);
+  --kbd-shadow: var(--bevel-raised);
 
   --badge-flat-bg: var(--win-face);
   --badge-flat-fg: var(--win-text);
@@ -313,6 +356,22 @@
   --editor-gutter-bg: var(--win-window);
   --editor-linenumber-fg: var(--win-gray-text);
   --editor-linenumber-active-fg: var(--win-text);
+}
+
+/* ===== Typography ===== */
+
+/* Windows 98 sets everything in 8pt MS Sans Serif, which is 11px. The pixel
+   font is only sharp at that size, so the app's scale of sizes is flattened
+   to it. Sizes in rem shrink with it, which also brings the spacing down to
+   the density of a classic app. */
+:root {
+  --font-size: 11px;
+}
+
+body *:not(i, x-icon, svg *, [class*="material-icons"], [class^="bk-"], .cm-editor, .cm-editor *) {
+  font-family: var(--font-family);
+  font-size: 11px !important;
+  letter-spacing: 0 !important;
 }
 
 /* ===== Icons ===== */
@@ -348,7 +407,76 @@ input[type="checkbox"]:checked::after,
 
 /* ===== Buttons ===== */
 
+/* A command button is 75 by 23, with its label in the regular weight. */
 .btn {
+  height: 23px;
+  min-width: 75px;
+  padding: 0 8px;
+  line-height: 23px;
+  font-weight: normal;
+  cursor: default;
+  transition: none;
+}
+
+/* The app makes a button's label bold while the pointer is over it. Only
+   the weight is restated for those states, so a button keeps its size. */
+.btn:hover,
+.btn:focus {
+  font-weight: normal;
+}
+
+.btn.btn-small {
+  height: 21px;
+  min-width: 0;
+  padding: 0 6px;
+  line-height: 21px;
+}
+
+.btn.btn-small x-label {
+  line-height: 21px;
+}
+
+/* An icon button is a toolbar button: 23 by 22 around a 16px image. */
+.btn.btn-icon {
+  width: 23px;
+  min-width: 23px;
+  height: 22px;
+  padding: 0;
+  line-height: 22px;
+}
+
+.btn .material-icons,
+.btn .material-icons-outlined,
+.btn.btn-icon .material-icons,
+.btn.btn-icon .material-icons-outlined {
+  font-size: 16px;
+}
+
+/* Buttons are never tinted: brand, info and danger buttons are gray too. */
+.btn.btn-brand,
+.btn.btn-info,
+.btn.btn-danger {
+  --btn-fg: var(--win-text);
+  --btn-fg-hover: var(--win-text);
+  --btn-bg-hover: transparent;
+  --btn-flat-fg: var(--win-text);
+  --btn-flat-fg-hover: var(--win-text);
+  --btn-flat-bg: var(--win-face);
+  --btn-flat-bg-hover: var(--win-face);
+  --btn-primary-fg: var(--win-text);
+  --btn-primary-bg: var(--win-face);
+  --btn-primary-bg-hover: var(--win-face);
+}
+
+/* An unavailable button keeps its face, and its label is engraved. */
+.btn[disabled],
+.btn[disabled]:hover,
+.btn[disabled]:focus,
+.btn.disabled,
+x-button[disabled] {
+  opacity: 1 !important;
+  color: var(--win-gray-text);
+  text-shadow: 1px 1px var(--bevel-light);
   cursor: default;
 }
 
@@ -418,24 +546,253 @@ x-button[skin="nav"][toggled] {
   outline-offset: -4px;
 }
 
+/* A row of option buttons: each is a button, and the chosen one stays in. */
+x-buttons,
+x-buttons.selectbutton {
+  overflow: visible;
+  border-radius: 0;
+}
+
+x-buttons > x-button[menu].btn {
+  border-left: 0;
+}
+
+x-buttons.selectbutton > x-button {
+  height: 23px;
+  min-width: 0;
+  padding: 0 10px;
+  line-height: 23px;
+  font-weight: normal;
+  color: var(--win-text);
+  background: var(--win-face);
+  box-shadow: var(--bevel-raised);
+  cursor: default;
+}
+
+x-buttons.selectbutton > x-button .togglebutton-content,
+x-buttons.selectbutton > x-button[toggled] .togglebutton-content {
+  padding: 0;
+  color: inherit;
+  background: none;
+  border-radius: 0;
+}
+
+x-buttons.selectbutton > x-button[toggled] {
+  background-image: conic-gradient(
+    var(--bevel-light) 25%,
+    transparent 0 50%,
+    var(--bevel-light) 0 75%,
+    transparent 0
+  );
+  background-size: 2px 2px;
+  box-shadow: var(--bevel-pressed);
+}
+
+/* ===== Text ===== */
+
+/* Bold is kept for window captions. Headings are regular text. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  line-height: 13px;
+  color: var(--win-text);
+}
+
+/* Status colors come from the 16-color palette. */
+.text-muted {
+  color: var(--win-gray-text);
+}
+
+.text-primary {
+  color: var(--win-text);
+}
+
+.text-info {
+  color: var(--base-accent);
+}
+
+.text-success {
+  color: var(--base-green);
+}
+
+.text-warning {
+  color: var(--base-yellow);
+}
+
+.text-danger {
+  color: var(--base-red);
+}
+
+a {
+  cursor: default;
+}
+
+/* ===== Badges and alerts ===== */
+
+/* A badge is a small label in a thin sunken panel, like a status bar pane. */
+.badge {
+  padding: 1px 4px;
+  margin: 0 3px;
+  line-height: 13px;
+  border-radius: 0;
+  box-shadow: var(--bevel-thin-sunken);
+  transition: none;
+  --badge-flat-bg: transparent;
+  --badge-flat-fg: var(--win-text);
+  --badge-primary-bg: var(--win-highlight);
+  --badge-primary-fg: var(--win-highlight-text);
+}
+
+.badge.badge-primary {
+  box-shadow: none;
+}
+
+.badge.badge-info {
+  --badge-flat-fg: var(--base-accent);
+}
+
+.badge.badge-success {
+  --badge-flat-fg: var(--base-green);
+  --badge-primary-bg: var(--base-green);
+}
+
+.badge.badge-warning {
+  --badge-flat-fg: var(--base-yellow);
+  --badge-primary-bg: var(--base-yellow);
+}
+
+.badge.badge-error,
+.badge.badge-danger {
+  --badge-flat-fg: var(--base-red);
+  --badge-primary-bg: var(--base-red);
+}
+
+/* An alert is a message set in a sunken frame. Only its icon is colored. */
+.alert,
+.alert.alert-small {
+  padding: 6px 8px;
+  margin: 7px 0;
+  line-height: 13px;
+  color: var(--win-text);
+  background: var(--win-face);
+  box-shadow: var(--bevel-thin-sunken);
+}
+
+.alert .alert-body {
+  line-height: 13px;
+}
+
+.alert > i {
+  margin-right: 8px;
+  font-size: 16px;
+  color: var(--win-text);
+}
+
+.alert.alert-info > i {
+  color: var(--base-accent);
+}
+
+.alert.alert-success > i {
+  color: var(--base-green);
+}
+
+.alert.alert-warning > i {
+  color: var(--base-yellow);
+}
+
+.alert.alert-danger > i {
+  color: var(--base-red);
+}
+
+.alert code,
+code {
+  padding: 0 2px;
+  margin: 0;
+  border-radius: 0;
+  background: none;
+}
+
+/* A key is drawn as a small raised button. */
+kbd,
+.kbd,
+.shortcut > span {
+  padding: 1px 5px;
+  margin: 0 2px;
+  line-height: 13px;
+  border-radius: 0;
+}
+
 /* ===== Fields ===== */
 
+/* A text box is 21px tall: an 11px line, 3px of space, and the 2px edge. */
 input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]),
 select,
-textarea {
+select.form-control,
+textarea,
+textarea.form-control,
+.bk-form-input {
+  height: 21px;
+  padding: 0 4px;
+  line-height: 21px;
+  border: 0;
   border-radius: 0;
   box-shadow: var(--bevel-field);
+  transition: none;
+}
+
+textarea,
+textarea.form-control {
+  height: auto;
+  padding: 3px 4px;
+  line-height: 13px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--win-gray-text);
+  opacity: 1;
+}
+
+/* A text box shows focus with its caret alone. */
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: none;
+}
+
+/* An unavailable field takes the window face. */
+input:not([type="checkbox"], [type="radio"])[disabled],
+select[disabled],
+textarea[disabled],
+.form-group input[disabled="disabled"] {
+  color: var(--win-gray-text) !important;
+  background: var(--win-face) !important;
+  border-style: none !important;
+  cursor: default !important;
+}
+
+/* A label sits 3px above its field, flush with the field's left edge. */
+.form-group label {
+  padding: 0;
+  margin-bottom: 3px;
+  line-height: 13px;
 }
 
 /* The app draws its own arrow with an !important background. */
-body select {
-  padding: 0 22px 0 6px;
+body select,
+body select.form-control {
+  padding: 0 20px 0 4px;
   border: 0;
   background: var(--win-combo), var(--input-bg) !important;
+  cursor: default;
 }
 
 body select.auto-width {
-  padding-right: 22px;
+  padding-right: 20px;
   background-position-x: unset !important;
 }
 
@@ -459,38 +816,126 @@ body .select-wrap:hover {
   box-shadow: none;
 }
 
+/* A check box is a 13px sunken well, 6px from its label. */
 input[type="checkbox"],
 input[type="checkbox"]:active,
 input[type="checkbox"]:checked,
 input[type="checkbox"]:checked:active {
+  flex: none;
+  width: 13px;
+  height: 13px;
+  margin: 0 6px 0 0;
+  line-height: 13px;
   outline: none;
   background: var(--win-window);
   box-shadow: var(--bevel-field);
+  transition: none;
+  cursor: default;
 }
 
-input[type="radio"] {
+input[type="checkbox"]:checked::after {
+  content: "";
+  background: var(--win-check) center no-repeat;
+}
+
+input[type="checkbox"]:active,
+input[type="checkbox"][disabled] {
+  background: var(--win-face);
+}
+
+input[type="checkbox"][disabled]:checked::after {
+  background-image: var(--win-check-disabled);
+}
+
+input[type="radio"],
+input[type="radio"]:checked {
+  flex: none;
+  width: 12px;
+  height: 12px;
+  margin: 0 6px 0 0;
+  padding: 0;
   border: 0;
-  background: var(--win-window);
-  box-shadow: var(--bevel-field);
+  border-radius: 0;
+  background-color: transparent;
+  background-image: var(--win-radio);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-clip: border-box;
+  box-shadow: none;
+  transition: none;
+  cursor: default;
 }
 
 input[type="radio"]:checked {
-  border: 0;
-  background: radial-gradient(
-    circle,
-    var(--win-text) 0 2px,
-    var(--win-window) 2.5px
-  );
+  background-image: var(--win-radio-checked);
+}
+
+input[type="radio"][disabled] {
+  background-image: var(--win-radio-disabled);
+}
+
+input[type="radio"][disabled]:checked {
+  background-image: var(--win-radio-checked-disabled);
+}
+
+/* Inputs the app hides to stand in for its own controls stay hidden. */
+input.visually-hidden[type="radio"],
+input.visually-hidden[type="checkbox"] {
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  background: none;
+  box-shadow: none;
+}
+
+.checkbox-group {
+  padding: 2px 0;
+  cursor: default;
+}
+
+/* Windows 98 has no switches. A switch is drawn as a check box. */
+x-switch,
+x-switch[skin="big"] {
+  flex: none;
+  width: 13px;
+  height: 13px;
+  margin: 0 6px 0 0;
+  background: var(--win-window);
+  box-shadow: var(--bevel-field);
+  cursor: default;
+  --thumb-color: transparent;
+  --track-color: transparent;
+  --thumb-size: 0px;
+}
+
+x-switch[toggled] {
+  background: var(--win-check) center no-repeat, var(--win-window);
+  --thumb-color: transparent;
+  --track-color: transparent;
+}
+
+x-switch[disabled] {
+  opacity: 1;
+  background-color: var(--win-face);
+}
+
+x-switch[disabled][toggled] {
+  background: var(--win-check-disabled) center no-repeat, var(--win-face);
 }
 
 /* ===== Scrollbars ===== */
 
-::-webkit-scrollbar {
+/* The app styles the same parts later in the cascade, so each selector
+   here starts from body to outrank it. The ui-kit has its own copy. */
+body ::-webkit-scrollbar,
+body .BksUiKit ::-webkit-scrollbar {
   width: 16px;
   height: 16px;
 }
 
-::-webkit-scrollbar-track-piece {
+/* The track is a checkerboard of the face and highlight colors. */
+body ::-webkit-scrollbar-track-piece,
+body .BksUiKit ::-webkit-scrollbar-track-piece {
   background-color: var(--win-face);
   background-image: conic-gradient(
     var(--bevel-light) 25%,
@@ -502,18 +947,17 @@ input[type="radio"]:checked {
   background-repeat: repeat !important;
 }
 
-::-webkit-scrollbar-thumb {
+body ::-webkit-scrollbar-thumb,
+body .BksUiKit ::-webkit-scrollbar-thumb {
   background: var(--win-face);
   border-radius: 0;
-  box-shadow: var(--bevel-raised);
+  box-shadow: var(--bevel-window);
 }
 
-/* No arrow buttons: the track runs the full length of the bar. */
-::-webkit-scrollbar-button {
-  display: none;
-}
+/* The arrow buttons are in scrollbars.css. */
 
-::-webkit-scrollbar-corner {
+body ::-webkit-scrollbar-corner,
+body .BksUiKit ::-webkit-scrollbar-corner {
   background: var(--win-face);
 }
 
@@ -531,9 +975,25 @@ input[type="radio"]:checked {
   --btn-primary-bg-hover: var(--win-face);
 }
 
+/* The bar is 24px: 2px of space above and below panes that are 20px tall.
+   Its highlight line is a border above that, so it never eats into the
+   space over the panes when a connection colors the bar. */
+.global-status-bar {
+  box-sizing: content-box;
+  height: 24px;
+  min-height: 24px;
+  line-height: 24px;
+  border-top: 1px solid var(--bevel-light);
+}
+
+.global-status-bar .statusbar {
+  align-items: center;
+  padding: 0 2px;
+}
+
 .global-status-bar,
 .global-status-bar .statusbar {
-  box-shadow: inset 0 1px var(--bevel-light);
+  box-shadow: none;
 }
 
 /* Each piece of status text sits in its own sunken panel. */
@@ -556,8 +1016,35 @@ body .global-status-bar .connection-button {
   line-height: 20px;
 }
 
-body .global-status-bar .connection-button {
-  margin: 3px 1px 3px 2px;
+body .global-status-bar .connection-button,
+body .global-status-bar .connection-button.default {
+  margin: 2px 1px 2px 2px;
+  color: var(--win-text);
+  background-color: var(--win-face);
+}
+
+.global-status-bar .badge,
+.global-status-bar .connection-button .badge {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Status text that the app makes a link is a pane like the rest. */
+.global-status-bar .statusbar a.btn.statusbar-item,
+.global-status-bar .statusbar a.btn.statusbar-item:hover {
+  min-width: 0;
+  box-shadow: var(--bevel-thin-sunken);
+}
+
+.global-status-bar .statusbar a.btn.statusbar-item i {
+  line-height: 16px;
+}
+
+.global-status-bar .statusbar .statusbar-item,
+.global-status-bar .statusbar .btn {
+  margin: 0 1px;
+  padding: 0 5px;
+  font-weight: normal;
 }
 
 /* Buttons are as tall as the panels beside them. */
@@ -603,17 +1090,18 @@ body .global-status-bar .pending-changes > .btn[menu] {
 
 /* ===== Toolbars ===== */
 
-/* A toolbar is a gray band with a lit top edge and a shaded bottom edge. */
+/* A toolbar is a plain gray band. The wells above and below it supply
+   its edges. */
 body .query-editor .toolbar,
 body .query-editor .bottom-panel .toolbar {
   padding: 3px 4px;
   background: var(--win-face);
-  box-shadow: inset 0 1px var(--bevel-light), inset 0 -1px var(--bevel-dark);
+  box-shadow: none;
 }
 
-/* The editor's toolbar runs the full width, past the frame around the editor. */
+/* The editor's toolbar sits 2px under the editor. */
 body .query-editor .top-panel > .toolbar {
-  margin: 4px -4px 0;
+  margin: 2px 0 0;
 }
 
 /* An etched divider between the two groups of buttons */
@@ -636,34 +1124,81 @@ body .query-editor .toolbar .actions.primary-actions {
 
 /* ===== Title bar ===== */
 
-.titlebar-wrapper {
-  font-weight: bold;
-}
-
-/* The menu bar is a list, and lists in the menu take the menu color, which
-   is black. The bar sits on the title bar, so it follows the title instead. */
-.titlebar .flyout-nav > .menu-bar,
-.titlebar .flyout-nav > .menu-bar .top-menu-item > a.selected .label {
-  color: inherit;
-}
-
-/* A Windows 98 caption is 18px tall. The app's is nearly twice that, held
-   open by padding, the logo and the menu labels. */
-.titlebar-wrapper {
+/* The app puts its menu on the title bar. A classic window has two rows: an
+   18px caption with the icon, the title and the caption buttons, and an 18px
+   menu bar below it on the window face. The gradient is cut to the caption,
+   and the menu is moved under it. */
+.titlebar-wrapper,
+body.window-inactive .titlebar-wrapper {
   padding-block: 0;
+  font-weight: bold;
+  background: var(--titlebar-bg) top / 100% 18px no-repeat, var(--win-face);
+  transition: none;
 }
 
-.titlebar-wrapper .titlebar {
-  height: 18px;
-  min-height: 18px;
-  padding: 0 2px;
+/* The app sets the inactive color with background-color, which drops gradients. */
+body.window-inactive .titlebar-wrapper {
+  background: var(--titlebar-inactive-bg) top / 100% 18px no-repeat,
+    var(--win-face);
+}
+
+.titlebar-wrapper .titlebar,
+.titlebar-wrapper .titlebar.windows {
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 37px;
+  min-height: 37px;
+  padding: 0 2px 0 0;
+}
+
+.titlebar .titlebar-icon,
+.titlebar.windows .titlebar-icon {
+  position: static;
 }
 
 .titlebar .titlebar-icon img {
   width: 16px;
   height: 16px;
-  margin: 1px 3px 1px 1px;
+  margin: 1px 2px 1px 2px;
   padding: 0;
+}
+
+/* The title is set left, straight after the icon. */
+.titlebar .titlebar-title {
+  position: static;
+  flex: 1 1 0;
+  min-width: 0;
+  height: 18px;
+  line-height: 18px;
+  text-align: left;
+  transform: none;
+}
+
+.titlebar .titlebar-title > span {
+  padding: 0 1px;
+}
+
+.titlebar .titlebar-actions {
+  height: 18px;
+  align-items: center;
+}
+
+/* ----- Menu bar ----- */
+
+.titlebar .flyout-nav {
+  position: absolute;
+  top: 18px;
+  left: 0;
+  right: 0;
+  height: 19px;
+  padding-top: 1px;
+  font-weight: normal;
+  color: var(--win-text);
+}
+
+.titlebar .flyout-nav > .menu-bar,
+.titlebar .flyout-nav > .menu-bar .top-menu-item > a.selected .label {
+  color: var(--win-text);
 }
 
 .titlebar .flyout-nav > .menu-bar .top-menu-item > a > .label {
@@ -671,17 +1206,15 @@ body .query-editor .toolbar .actions.primary-actions {
   padding: 0 6px;
 }
 
-.titlebar .titlebar-title {
-  line-height: 18px;
+/* An open menu's title is selected like a menu item. */
+.titlebar .flyout-nav.active > .menu-bar .top-menu-item.selected > a,
+.titlebar .flyout-nav.active > .menu-bar .top-menu-item.selected > a.selected .label {
+  color: var(--win-highlight-text);
+  background: var(--win-highlight);
 }
 
 .titlebar x-menubar {
   margin: 0;
-}
-
-/* The app sets the inactive color with background-color, which drops gradients. */
-body.window-inactive .titlebar-wrapper {
-  background: var(--titlebar-inactive-bg);
 }
 
 .titlebar .titlebar-actions .titlebar-actions-extra {
@@ -692,7 +1225,7 @@ body.window-inactive .titlebar-wrapper {
 .titlebar .window-controls-container {
   align-items: center;
   gap: 0;
-  margin-right: 2px;
+  margin-right: 0;
 }
 
 .titlebar .titlebar-actions .titlebar-actions-extra > button.btn,
@@ -752,7 +1285,109 @@ body.window-inactive .titlebar-wrapper {
   margin-left: 2px;
 }
 
+/* ===== Panels ===== */
+
+/* The parts of the window are told apart by their edges: an etched line
+   closes the menu bar, the rail is a toolbar with an etched side, the open
+   tab has a raised page, and everything that holds data sits in a sunken
+   white well. */
+.titlebar-wrapper {
+  border-bottom: 1px solid var(--bevel-dark);
+}
+
+#interface,
+.connection-interface {
+  border-top: 1px solid var(--bevel-light);
+}
+
+.interface-wrap .global-items {
+  box-shadow: inset -1px 0 var(--bevel-light), inset -2px 0 var(--bevel-dark);
+}
+
+/* The page under the tabs: a raised frame whose top edge is the line that
+   runs along the tab strip. */
+.core-tabs .tab-content {
+  background: var(--win-face);
+  box-shadow: inset -1px -1px var(--bevel-darkest),
+    inset 1px 0 var(--bevel-light), inset -2px -2px var(--bevel-dark),
+    inset 2px 0 var(--bevel-mid);
+}
+
+.core-tabs .tab-pane {
+  inset: 3px 5px 5px;
+  background: var(--win-face);
+}
+
+.core-tabs .tab-content > .empty-editor-group {
+  margin: 0 2px 2px;
+  background: var(--win-face);
+}
+
+/* A table's data is a sunken well under its filter bar. */
+.tabletable .table-view-wrapper {
+  box-sizing: border-box;
+  padding: 2px;
+  background: var(--win-window);
+  box-shadow: var(--bevel-field);
+}
+
+/* Text is only sharp on whole pixels, but centered labels, rem spacing and
+   panes sized by a splitter all land between them. will-change makes the
+   browser place an element on the pixel grid, so it is set on the small
+   parts that hold text. It has no effect on inline elements. It also makes
+   an element a layer of its own, which would trap a drop-down menu or a
+   tooltip under whatever is drawn after it, so anything that contains one
+   is left out. */
+:is(
+  label,
+  button,
+  .btn,
+  x-button,
+  kbd,
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  input,
+  select,
+  textarea,
+  .badge,
+  .alert-body,
+  .label,
+  .list-heading,
+  .list-item-btn,
+  .sub-item,
+  .statusbar-item,
+  .connection-button,
+  .nav-link,
+  .nav-pill,
+  .mode-option,
+  .control-info,
+  .shortcut-item,
+  .tabulator-col,
+  .table-filter,
+  .toolbar,
+  .card-title,
+  .app-version,
+  .empty-placeholder
+):not(.titlebar *, .v--modal-box, :has(x-menu, .bks-tooltip, .v--modal-overlay)) {
+  will-change: transform;
+}
+
+.core-tabs .tab-pane .tabulator {
+  will-change: transform;
+}
+
 /* ===== Sidebars ===== */
+
+/* The rail is a toolbar of large buttons: flat until the pointer is over
+   one, and sunken for the open panel. */
+.interface-wrap .global-items .nav-item.selectable::before {
+  display: none;
+}
 
 .global-items .nav-item:hover > span {
   box-shadow: var(--bevel-thin-raised);
@@ -762,8 +1397,120 @@ body.window-inactive .titlebar-wrapper {
   box-shadow: var(--bevel-thin-sunken);
 }
 
-.list-group .list-item-btn {
+.sidebar .tab-content .tab-pane .fixed {
+  padding: 0 4px;
+}
+
+.sidebar .data-select-wrap,
+.sidebar .data-select-wrap.btn {
+  height: 23px;
+  min-height: 23px;
+  margin: 4px 0;
+  padding: 0 4px;
+}
+
+.sidebar .filter {
+  margin-bottom: 4px;
+}
+
+/* The filter's field carries the bevel itself. */
+.sidebar .filter .filter-wrap,
+.sidebar .filter .filter-wrap:has(input:focus) {
+  gap: 2px;
+  border: 0;
+  background: none;
+}
+
+.sidebar .filter .filter-actions {
+  padding: 0;
+}
+
+.sidebar .filter .filter-actions x-button.btn-icon {
+  width: 23px;
+  min-width: 23px;
+  height: 21px;
+  margin: 0;
+  line-height: 21px;
+  box-shadow: var(--bevel-raised);
+}
+
+.sidebar .filter .filter-actions x-button.btn-icon.active {
+  background: var(--win-face);
+  box-shadow: var(--bevel-pressed);
+}
+
+.sidebar .filter .filter-actions .material-icons,
+.sidebar .filter .filter-actions .material-icons-outlined {
+  line-height: 21px;
+}
+
+.sidebar .sidebar-wrap hr {
+  margin: 0 4px;
+  border-top: 1px solid var(--bevel-dark);
+  border-bottom: 1px solid var(--bevel-light);
+}
+
+/* A list's caption is plain bold text, with small tool buttons beside it. */
+.list-heading {
+  min-height: 20px;
+  padding: 3px 4px 2px;
+  color: var(--win-text);
+}
+
+.sub {
+  font-weight: normal;
+  text-transform: none;
+}
+
+.list-heading .actions {
+  gap: 2px;
+}
+
+.list-heading .actions .material-icons,
+.list-heading .actions a .material-icons,
+.list-heading .actions x-button .material-icons {
+  font-size: 14px;
+  font-weight: normal;
+  color: var(--win-text);
+}
+
+/* In a list, a badge is a quiet note beside the item and has no frame. */
+.list-group .badge,
+.list-heading .badge {
+  padding: 0 2px;
+  margin: 0 0 0 4px;
   border-radius: 0;
+  text-transform: none;
+  box-shadow: none;
+  --badge-flat-fg: var(--win-gray-text);
+}
+
+/* The list itself is a tree view: a white sunken box of 17px rows. */
+.sidebar .list-body {
+  margin: 0 4px 4px;
+  padding: 2px;
+  color: var(--win-text);
+  background: var(--win-window);
+  box-shadow: var(--bevel-field);
+}
+
+.sidebar .tab-content #tab-tables .table-list,
+.sidebar .tab-content #tab-tables .list-group {
+  padding-left: 0;
+}
+
+.list-group .list-item-btn,
+.list-group .sub-item {
+  height: auto;
+  min-height: 17px;
+  line-height: 17px;
+  color: var(--win-text);
+  border-radius: 0;
+  cursor: default;
+}
+
+.list-group .list-item-btn:hover:not(.active, .selected) {
+  background: none;
 }
 
 .list-group .list-item-btn.active,
@@ -771,6 +1518,66 @@ body.window-inactive .titlebar-wrapper {
   background: var(--win-highlight);
   color: var(--win-highlight-text);
   --btn-fg: var(--win-highlight-text);
+}
+
+.list-group .list-item-btn.active .item-icon,
+.list-group .list-item-btn.selected .item-icon {
+  color: inherit;
+}
+
+.list-group .list-item-btn.active .badge,
+.list-group .list-item-btn.selected .badge {
+  --badge-flat-fg: var(--win-highlight-text);
+}
+
+/* The arrow that opens an item is the tree view's plus and minus box. */
+.list-group .list-item-btn .btn-icon.open-close {
+  width: 16px;
+  min-width: 16px;
+  height: 17px;
+  margin: 0;
+  background: var(--win-tree-plus) center no-repeat;
+}
+
+.list-group .list-item-btn.open .btn-icon.open-close {
+  background-image: var(--win-tree-minus);
+}
+
+.list-group .list-item-btn .btn-icon.open-close,
+.list-group .list-item-btn.open .btn-icon.open-close {
+  transform: none;
+  transition: none;
+}
+
+/* An opened item's children hang from a dotted guide, each on a 17px row. */
+.list-group .sub-items {
+  padding: 0;
+  color: var(--win-text);
+}
+
+.list-group .sub-item,
+.list-group .sub-item:hover {
+  padding: 0 2px 0 22px;
+  background: none;
+}
+
+.list-group .list-item-btn .btn-icon.open-close i {
+  display: none;
+}
+
+.list-group .item-icon {
+  width: 16px;
+  min-width: 16px;
+  margin-right: 3px;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.list-group .list-item-btn .actions .btn-icon {
+  width: 16px;
+  min-width: 16px;
+  height: 17px;
+  margin: 0;
 }
 
 /* The secondary sidebar's titles, like JSON Viewer, are tabs. */
@@ -804,27 +1611,191 @@ body.window-inactive .titlebar-wrapper {
   align-self: center;
 }
 
+.sidebar.secondary-sidebar .sidebar-heading x-tabs x-tab x-label {
+  font-weight: normal;
+  line-height: 13px;
+  text-transform: none;
+}
+
+/* The JSON viewer: a filter row, then the document in a sunken white well. */
+.json-viewer .header {
+  padding: 4px 0;
+}
+
+.json-viewer .header .header-group {
+  gap: 3px;
+  margin: 0 4px;
+  padding: 0;
+}
+
+.json-viewer .text-editor-wrapper {
+  margin: 0 4px 4px;
+  padding: 2px;
+  background: var(--win-window);
+  box-shadow: var(--bevel-field);
+}
+
+.json-viewer-sidebar .BksTextEditor {
+  padding-left: 0;
+}
+
+/* A value that opens a related row is a small raised button, not a pill. */
+.json-viewer .expandable-value {
+  padding: 0 4px;
+  background: var(--win-face);
+  border-radius: 0;
+  box-shadow: var(--bevel-thin-raised);
+}
+
+/* "Show more" on a long value is a small button. */
+.truncatable-value .more {
+  padding: 0 4px;
+  font-family: var(--font-family);
+  font-weight: normal;
+  line-height: 13px;
+  color: var(--win-text);
+  background: var(--win-face);
+  border-radius: 0;
+  box-shadow: var(--bevel-raised);
+}
+
+/* Folder trees use the same boxes, 17px rows and dotted guides. */
+.BksTree .BksTree-folder,
+.BksTree .BksTree-folder:hover {
+  height: 17px;
+  padding-left: calc(var(--depth) * 16px);
+  padding-right: 3px;
+  color: var(--win-text);
+  background: none;
+  border-radius: 0;
+  cursor: default;
+}
+
+.BksTree .BksTree-folder .material-icons.expand-icon {
+  width: 16px;
+  height: 17px;
+  font-size: 0;
+  background: var(--win-tree-plus) center no-repeat;
+}
+
+.BksTree .BksTree-folder[data-expanded="true"] .material-icons.expand-icon {
+  background-image: var(--win-tree-minus);
+}
+
+.BksTree .BksTree-folder .material-icons.folder-icon {
+  width: 16px;
+  margin-left: 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+.BksTree .BksTree-folder .name {
+  margin-left: 3px;
+}
+
+.BksTree .BksTree-folder-empty {
+  padding-left: calc(var(--depth) * 16px + 19px);
+  margin-block: 0;
+  line-height: 17px;
+  opacity: 1;
+  color: var(--win-gray-text);
+}
+
+.BksTree .BksTree-node-folder.BksTree-node-expanded:not(.BksTree-node-empty)::before {
+  top: 17px;
+  left: calc(var(--depth) * 16px + 8px);
+  border-left: 1px dotted var(--bevel-dark);
+}
+
+.BksTree .BksTree-row[data-drop-target="inside"] {
+  color: var(--win-highlight-text);
+  background: var(--win-highlight);
+  border-radius: 0;
+}
+
+/* ----- Steps ----- */
+
+/* A wizard's steps are named in a row across the top. The current step is
+   bold, and a bar over each step fills as it is passed. */
+.stepper-box .top .nav-pills {
+  align-items: flex-start;
+  margin-top: 7px;
+  padding: 0;
+  background: none;
+}
+
+.stepper-box .top .nav-pills .progress {
+  height: 2px;
+  margin: 0 3px 2px;
+  border-radius: 0;
+  transition: none;
+}
+
+.stepper-box .top .nav-pills .progress.passed {
+  background-color: var(--win-highlight);
+}
+
+.stepper-box .top .nav-pills .progress:not(.passed),
+.stepper-box .top .nav-pills div:hover:not(.deactivated) .progress:not(.passed) {
+  background-color: var(--bevel-dark);
+}
+
+body .stepper-box .top .nav-pills .nav-pill,
+body .stepper-box .top .nav-pills .nav-pill.active {
+  height: 17px;
+  margin: 0;
+  padding: 0 8px;
+  line-height: 17px;
+  color: var(--win-text);
+  background: none;
+  box-shadow: none;
+  clip-path: none;
+}
+
+body .stepper-box .top .nav-pills .nav-pill.active {
+  text-decoration: underline;
+}
+
+body .stepper-box .top .nav-pills .nav-pill.active::after {
+  display: none;
+}
+
+body .stepper-box .top .nav-pills .nav-pill.deactivated {
+  color: var(--win-gray-text);
+  text-shadow: 1px 1px var(--bevel-light);
+  cursor: default;
+}
+
+.stepper-box .bottom {
+  padding: 11px;
+}
+
 /* ===== Tabs ===== */
 
 /* Property sheet tabs: the open tab stands taller and joins the page below,
    and the rest sit behind the line along the bottom of the strip. */
 .core-tabs .tabs-header {
-  padding: 6px 4px 0;
+  padding: 3px 2px 0;
   box-shadow: inset 0 -1px var(--bevel-light);
 }
 
-/* The tab height is the app's own, 2.4rem. */
+.core-tabs .tabs-header .nav-tabs {
+  height: 22px;
+}
+
+/* A tab is 19px tall, and the open one stands 2px taller. */
 .core-tabs .tabs-header .nav-tabs .nav-link {
-  height: calc(2.4rem - 6px);
-  margin: 5px 0 1px;
-  line-height: calc(2.4rem - 6px);
+  height: 19px;
+  margin: 2px 0 1px;
+  line-height: 19px;
   clip-path: var(--tab-clip);
+  cursor: default;
 }
 
 .core-tabs .tabs-header .nav-tabs .nav-link.active {
-  height: 2.4rem;
+  height: 22px;
   margin: 0;
-  line-height: 2.4rem;
+  line-height: 21px;
   font-weight: normal;
   box-shadow: var(--bevel-tab);
 }
@@ -836,13 +1807,41 @@ body .nav-pills .nav-pill.active::after,
 .sidebar.secondary-sidebar .sidebar-heading x-tabs x-tab[selected]::after {
   content: "";
   position: absolute;
-  inset: 4px 5px 3px;
+  inset: 3px 3px 2px;
   border: 1px dotted var(--win-text);
   pointer-events: none;
 }
 
 .core-tabs .tabs-header .nav-tabs .nav-link.active::after {
-  right: 31px;
+  right: 19px;
+}
+
+.core-tabs .nav-tabs .tab-title {
+  padding-right: 20px;
+}
+
+.core-tabs .nav-tabs .tab-title .tab-title-scope {
+  font-style: normal;
+}
+
+.core-tabs .nav-tabs .nav-link .tab-action {
+  min-width: 16px;
+}
+
+.core-tabs .nav-tabs .nav-link .tab-action .tab-close,
+.core-tabs .nav-tabs .nav-link .tab-action .tab-close i {
+  width: 14px;
+  min-width: 14px;
+  height: 14px;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+/* The new tab buttons are toolbar buttons at the end of the strip. */
+.core-tabs .tabs-header .add-tab-group {
+  align-self: center;
+  margin: 0 4px;
+  border: 0;
 }
 
 /* The close button's backdrop covers the end of the tab, so it stays inside
@@ -863,13 +1862,16 @@ body .nav-pills .nav-pill.active::after,
 body .nav-pills {
   justify-content: flex-start;
   align-items: flex-end;
-  padding: 6px 4px 0;
+  padding: 3px 2px 0;
   background: var(--win-face);
 }
 
 body .nav-pills .nav-pill {
-  margin: 5px 0 1px;
-  padding: 3px 10px;
+  height: 19px;
+  margin: 2px 0 1px;
+  padding: 0 6px;
+  line-height: 19px;
+  cursor: default;
   font-weight: normal;
   background: var(--win-face);
   box-shadow: var(--bevel-tab);
@@ -878,9 +1880,11 @@ body .nav-pills .nav-pill {
 }
 
 body .nav-pills .nav-pill.active {
+  height: 22px;
   margin: 0;
   position: relative;
-  padding: 6px 10px;
+  padding: 0 8px;
+  line-height: 21px;
 }
 
 .core-tabs .nav-tabs .nav-link,
@@ -908,6 +1912,209 @@ x-menuitem[expanded] x-icon {
   color: var(--win-highlight-text);
 }
 
+/* A menu is a raised panel with a 3px edge. Items are 17px tall, with a 16px
+   column on the left for a check mark and one on the right for a submenu
+   arrow. */
+.flyout-nav .menu-bar ul,
+x-menu,
+.BksContextMenu-list,
+.tabulator-menu {
+  min-width: 0;
+  padding: 3px;
+  font-weight: normal;
+  box-shadow: var(--bevel-window);
+}
+
+.flyout-nav .menu-bar ul li a .label,
+.flyout-nav .menu-bar ul li a .shortcut {
+  height: 17px;
+  padding: 0 16px 0 17px;
+  line-height: 17px;
+  color: inherit;
+}
+
+.flyout-nav .menu-bar ul li a .shortcut {
+  padding-left: 8px;
+  text-align: left;
+}
+
+.flyout-nav .menu-bar ul li a .label .material-icons {
+  left: 1px;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+x-menuitem,
+x-menu x-menuitem,
+.BksContextMenu-item {
+  min-height: 17px;
+  padding: 0 16px 0 20px;
+  line-height: 17px;
+  cursor: default;
+}
+
+.flyout-nav li a .label {
+  cursor: default;
+}
+
+/* An icon takes the place of the check mark column. */
+x-menu x-menuitem:has(> i, > x-icon),
+.BksContextMenu-item:has(> .BksContextMenu-item-leading-icon, > .BksContextMenu-item-checkbox-icon) {
+  padding-left: 0;
+}
+
+x-menu x-menuitem > i,
+x-menu x-menuitem > x-icon {
+  margin: 0 3px 0 0;
+}
+
+x-menu x-menuitem > i,
+x-menu x-menuitem > x-icon,
+.BksContextMenu-item-icon-container i {
+  width: 16px;
+  height: 16px;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  opacity: 1;
+}
+
+.BksContextMenu-item-leading-icon,
+.BksContextMenu-item-checkbox-icon {
+  flex: none;
+  width: 16px;
+  margin: 0 3px 0 1px;
+}
+
+/* Some menus put the icon inside the label. It moves out to the check
+   mark column all the same. */
+x-menu x-menuitem x-label {
+  display: flex;
+  align-items: center;
+  line-height: 17px;
+}
+
+x-menu x-menuitem:has(x-label > i) {
+  padding-left: 1px;
+}
+
+body x-menu x-menuitem x-label > i {
+  flex: none;
+  width: 16px !important;
+  height: 16px !important;
+  margin: 0 3px 0 0;
+  font-size: 14px !important;
+  line-height: 16px !important;
+  text-align: center;
+}
+
+x-menu x-menuitem x-shortcut {
+  margin-left: 16px;
+  color: inherit;
+  opacity: 1;
+}
+
+/* A menu opens at the pointer, which can be between two pixels. */
+x-menu {
+  overflow-x: hidden;
+  will-change: transform;
+}
+
+.BksContextMenu-list {
+  will-change: transform;
+}
+
+.BksContextMenu-item-trailing-icon,
+.BksContextMenu-item-submenu-icon {
+  margin-right: -16px;
+}
+
+.BksContextMenu-item-shortcut,
+.BksContextMenu-item .BksContextMenu-item-shortcut {
+  margin-left: 16px;
+  color: inherit;
+  opacity: 1;
+}
+
+/* A separator is an etched line, 3px clear of the items around it. */
+.flyout-nav li .separator,
+.flyout-nav li.separator,
+x-menu hr,
+.BksContextMenu-item-divider,
+.tabulator-menu .tabulator-menu-separator {
+  height: 2px;
+  min-height: 2px;
+  margin: 3px 1px 4px;
+  padding: 0;
+  border: 0;
+  border-top: 1px solid var(--bevel-dark);
+  border-bottom: 1px solid var(--bevel-light);
+  background: none;
+}
+
+/* Windows 98 menus have no headings. This reads as an unavailable item. */
+.BksContextMenu-section-label,
+x-menu .BksContextMenu-section-label {
+  min-height: 17px;
+  padding: 0 16px 0 20px;
+  line-height: 17px;
+  font-weight: normal;
+  text-transform: none;
+  color: var(--win-gray-text);
+  text-shadow: 1px 1px var(--bevel-light);
+}
+
+/* Unavailable items are engraved: gray text with a light edge below it. */
+.flyout-nav li.disabled .label,
+.flyout-nav li.disabled .shortcut,
+x-menuitem[disabled],
+x-menuitem[disabled] x-label,
+.BksContextMenu-item.BksContextMenu-item-disabled,
+.BksContextMenu-item.disabled {
+  opacity: 1;
+  color: var(--win-gray-text);
+  text-shadow: 1px 1px var(--bevel-light);
+}
+
+x-menuitem[disabled] > * {
+  opacity: 1;
+}
+
+/* The check mark and the submenu arrow are the original bitmaps. */
+body .flyout-nav li a input[type="checkbox"]:checked + .label::before {
+  content: "";
+  top: 5px;
+  left: 5px;
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  background: currentColor;
+  -webkit-mask: var(--win-glyph-check) center no-repeat;
+  mask: var(--win-glyph-check) center no-repeat;
+}
+
+.flyout-nav li.has-children > a {
+  margin-right: 0;
+}
+
+.flyout-nav li.has-children > a::after {
+  content: "";
+  top: 5px;
+  right: 6px;
+  width: 4px;
+  height: 7px;
+  padding: 0;
+  background: currentColor;
+  -webkit-mask: var(--win-arrow-right) center no-repeat;
+  mask: var(--win-arrow-right) center no-repeat;
+}
+
+/* A submenu overlaps its parent by the width of the edge. */
+.flyout-nav.active li.menu-item.hovered > ul {
+  top: -3px;
+  left: calc(100% - 3px);
+}
+
 /* The editor sets the selected completion's color from script, with the
    panel text color, and tints keywords and functions on top of that. */
 body .cm-tooltip.cm-tooltip-autocomplete.BksTextEditor-hints {
@@ -922,10 +2129,27 @@ body .cm-tooltip.cm-tooltip-autocomplete.BksTextEditor-hints ul li:hover {
   background: var(--win-highlight);
 }
 
+/* The app sets its own monospace font on the editor, past the theme's
+   token. Code is set in the theme's editor font everywhere. */
+body .BksTextEditor .cm-editor,
+body .BksTextEditor .cm-scroller,
+body .BksTextEditor .cm-content,
+body .BksTextEditor-hints,
+body .cm-tooltip {
+  font-family: var(--editor-font-family);
+}
+
 /* The query editor is a sunken white text area set in a gray frame. */
 .query-editor .top-panel {
-  padding: 4px 4px 0;
+  padding: 0;
   background: var(--win-face);
+}
+
+/* The results are a sunken white client area as well. */
+.query-editor .bottom-panel {
+  padding: 2px;
+  background: var(--win-window);
+  box-shadow: var(--bevel-field);
 }
 
 .query-editor .top-panel > :is(.BksTextEditor, .BksSqlTextEditor) {
@@ -936,15 +2160,152 @@ body .cm-tooltip.cm-tooltip-autocomplete.BksTextEditor-hints ul li:hover {
 
 /* ===== Tables ===== */
 
-/* The app rounds the top corners with a five-class selector. */
+/* The grid follows Excel 97: 17px rows, gray headers with a thin raised
+   edge and centered labels, pale gridlines, and a black frame on the
+   selection. */
+.tabulator .tabulator-header {
+  font-weight: normal;
+}
+
+/* The app sets the header height, and rounds its corners, with !important. */
 .tabulator .tabulator-header .tabulator-col {
+  height: 18px !important;
+  font-weight: normal;
   background: var(--win-face);
-  box-shadow: var(--bevel-raised);
+  box-shadow: var(--bevel-thin-raised);
   border-radius: 0 !important;
 }
 
-.tabulator .tabulator-cell {
+.tabulator .tabulator-header .tabulator-col:hover:not(.tabulator-range-selected):not(.tabulator-range-row-header) {
+  background: var(--win-face);
+  cursor: default;
+}
+
+.tabulator .tabulator-header .tabulator-col .tabulator-col-content,
+.tabulator .tabulator-header .tabulator-col:first-of-type .tabulator-col-content {
+  padding: 0 2px 0 4px;
+  line-height: 18px;
+}
+
+.tabulator .tabulator-header .tabulator-col .tabulator-col-title {
+  line-height: 18px;
+  font-weight: normal;
+}
+
+/* The app makes the sort button 24px tall, which pushes the label down and
+   out of the 18px header. Everything in the header keeps to its height and
+   is centered on it. The label stays at the left: centered text lands
+   between pixels and blurs. */
+.tabulator .tabulator-header .tabulator-col .tabulator-col-content .tabulator-col-title-holder,
+.tabulator .tabulator-header .tabulator-col .tabulator-col-content .tabulator-col-title-holder .tabulator-col-title {
+  height: 18px;
+}
+
+.tabulator .tabulator-header .tabulator-col .tabulator-col-content .tabulator-col-title-holder .tabulator-col-title .title {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 0;
+  line-height: 18px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tabulator .tabulator-header .tabulator-col .column-data-type {
+  margin-left: 4px;
+  color: var(--win-gray-text);
+}
+
+/* The key and lock marks are centered on the row like a 16px icon. */
+.tabulator .tabulator-header .tabulator-col:is(.primary-key, .foreign-key, .read-only-field, .generated-column)::before {
+  align-items: center;
+  height: 18px;
+  line-height: 18px;
+  color: var(--win-text);
+}
+
+/* The sort mark is the 7 by 4 arrow of a scrollbar button, shown only on
+   the column the rows are sorted by. */
+.tabulator .tabulator-header .tabulator-col .tabulator-col-content .tabulator-col-title-holder .tabulator-col-title .tabulator-col-sorter.tabulator-col-sorter-element {
+  flex: none;
+  width: 13px;
+  height: 18px;
+  min-height: 18px;
+  margin-left: 0;
+  border-radius: 0;
+  background: none;
+}
+
+.tabulator .tabulator-header .tabulator-col .tabulator-col-content .tabulator-col-sorter .tabulator-arrow,
+.tabulator .tabulator-header .tabulator-col.tabulator-sortable[aria-sort] .tabulator-col-content .tabulator-col-sorter .tabulator-arrow {
+  position: static;
+  width: 7px;
+  height: 4px;
+  border: 0 !important;
+  background: var(--win-arrow-up) center no-repeat;
+}
+
+.tabulator .tabulator-header .tabulator-col.tabulator-sortable[aria-sort="descending"] .tabulator-col-content .tabulator-col-sorter .tabulator-arrow {
+  background-image: var(--win-arrow-down);
+}
+
+.tabulator .tabulator-header .tabulator-col.tabulator-sortable[aria-sort="none"] .tabulator-col-content .tabulator-col-sorter .tabulator-arrow {
+  visibility: hidden;
+}
+
+/* The header of a column or row that holds the selection is bold. */
+.tabulator .tabulator-header .tabulator-col.tabulator-range-highlight .tabulator-col-title,
+.tabulator-row.tabulator-range-highlight .tabulator-cell.tabulator-range-row-header {
+  font-weight: bold;
+}
+
+.tabulator-row,
+.tabulator-row .tabulator-cell {
+  min-height: 17px;
+}
+
+.tabulator-row .tabulator-cell,
+.tabulator-row .tabulator-cell:first-of-type,
+.tabulator-row .tabulator-cell:last-of-type {
+  height: 17px;
+  padding: 0 3px;
+  line-height: 16px;
   box-shadow: inset -1px -1px var(--win-gridline);
+}
+
+.tabulator-row .tabulator-cell input:not([type="checkbox"]),
+.tabulator-row .tabulator-cell.tabulator-editing,
+.tabulator-row .tabulator-cell.tabulator-editing pre,
+.tabulator-row .tabulator-cell.tabulator-editing input:not([type="checkbox"]) {
+  height: 17px;
+  min-height: 17px;
+  line-height: 16px !important;
+  box-shadow: none;
+}
+
+.tabulator-row .tabulator-cell.tabulator-editing pre,
+.tabulator-row .tabulator-cell.tabulator-editing input:not([type="checkbox"]),
+.tabulator-row .tabulator-cell.tabulator-editing textarea {
+  padding: 0 3px !important;
+}
+
+/* A cell being edited is white, inside the selection frame. */
+.tabulator-row .tabulator-cell.tabulator-editing,
+.tabulator-row .tabulator-cell.tabulator-editing:focus {
+  background: var(--win-window);
+  box-shadow: inset -1px -1px var(--win-gridline) !important;
+}
+
+/* The selection frame is 2px of the text color, with a square fill handle. */
+.tabulator .tabulator-tableholder .tabulator-range-overlay .tabulator-range.tabulator-range-active {
+  border-width: 2px;
+}
+
+.tabulator-range-fill-handle,
+.tabulator .tabulator-range-overlay .tabulator-range-handle {
+  width: 5px;
+  height: 5px;
+  border-radius: 0;
+  box-shadow: 0 0 0 1px var(--win-window);
 }
 
 /* Tabulator adds tabulator-range-row-header after building the header, so
@@ -956,14 +2317,16 @@ body .cm-tooltip.cm-tooltip-autocomplete.BksTextEditor-hints ul li:hover {
 
 .tabulator .tabulator-header .tabulator-col.tabulator-frozen-left {
   background: var(--win-face) !important;
-  box-shadow: var(--bevel-raised) !important;
+  box-shadow: var(--bevel-thin-raised) !important;
 }
 
 /* Row headers get their colors from many app and ui-kit rules, some of them
    !important, so each state is restated here to look like a column header. */
-.tabulator-cell.tabulator-range-row-header {
+.tabulator-row .tabulator-cell.tabulator-range-row-header {
+  padding: 0;
+  text-align: center;
   background: var(--win-face) !important;
-  box-shadow: var(--bevel-raised) !important;
+  box-shadow: var(--bevel-thin-raised) !important;
 }
 
 .tabulator-row.tabulator-range-highlight
@@ -978,33 +2341,203 @@ body .cm-tooltip.cm-tooltip-autocomplete.BksTextEditor-hints ul li:hover {
   background: var(--table-header-selected-bg) !important;
 }
 
-/* Filter fields use the flat button colors, which are gray here. */
-.table-filter .filter input,
-.table-filter .filter-group .select-wrap,
-.table-filter .filter-group .select-wrap:hover {
-  padding-right: 0;
+/* ----- Table structure ----- */
+
+/* The structure view is a property page: 7px between its parts, a toolbar
+   of ordinary fields and buttons, and each list in a sunken well. */
+body .table-properties .alert-wrapper {
+  padding: 7px;
+}
+
+body .table-properties .table-info-table-wrap {
+  padding: 4px 7px 11px;
+}
+
+body .table-properties .table-subheader {
+  min-height: 23px;
+  margin: 7px 0 6px;
+  padding: 0;
+}
+
+body .table-properties .table-subheader .table-info-toolbar {
+  gap: 6px;
+}
+
+body .table-properties .table-subheader .table-info-toolbar .toolbar-title,
+body .table-properties .table-subheader .table-info-toolbar .toolbar-actions {
+  height: 23px;
+  gap: 3px;
+}
+
+body .table-properties .table-subheader .table-info-toolbar .table-info-filter,
+body .table-properties .table-subheader .table-info-toolbar .table-info-filter:focus-within {
+  gap: 3px;
+  height: 21px;
+  max-width: 240px;
+  padding: 0 4px;
   background: var(--win-window);
   border: 0;
   border-radius: 0;
+  box-shadow: var(--bevel-field);
+  transition: none;
+}
+
+body .table-properties .table-subheader .table-info-toolbar .table-info-filter .filter-input {
+  height: 17px;
+  line-height: 17px;
+  color: var(--win-text);
+}
+
+body .table-properties .table-subheader .table-info-toolbar .table-info-filter .search-icon {
+  font-size: 12px;
+  color: var(--win-text);
+}
+
+body .table-properties .table-subheader .table-info-toolbar :is(.search-btn, .refresh-btn, .copy-btn, .add-btn),
+body .table-properties .table-subheader .table-info-toolbar :is(.search-btn, .refresh-btn, .copy-btn, .add-btn):is(:hover, :focus) {
+  height: 22px;
+  min-width: 23px;
+  margin: 0;
+  padding: 0 4px;
+  gap: 3px;
+  font-weight: normal;
+  line-height: 22px;
+  color: var(--win-text);
+  background: var(--win-face);
+  border-radius: 0;
+  box-shadow: var(--bevel-raised);
+  cursor: default;
+}
+
+body .table-properties .table-subheader .table-info-toolbar .add-btn,
+body .table-properties .table-subheader .table-info-toolbar .add-btn:is(:hover, :focus) {
+  padding: 0 8px 0 5px;
+}
+
+body .table-properties .table-subheader .table-info-toolbar :is(.search-btn, .refresh-btn, .copy-btn, .add-btn):active {
+  box-shadow: var(--bevel-pressed);
+}
+
+body .table-properties .table-subheader .table-info-toolbar :is(.search-btn, .refresh-btn, .copy-btn, .add-btn) .material-icons {
+  font-size: 14px;
+  color: var(--win-text);
+}
+
+/* The lists here are plain grids: no gaps between rows and no stripes. */
+body .table-properties .table-properties-wrap .tabulator,
+body .schema-builder .tabulator {
+  margin: 2px;
+  background: var(--win-window);
+  box-shadow: -1px -1px var(--bevel-darkest), 1px 1px var(--bevel-mid),
+    -2px -2px var(--bevel-dark), 2px 2px var(--bevel-light);
+}
+
+body .table-properties .table-properties-wrap .tabulator-row,
+body .table-properties .table-properties-wrap .tabulator-row.tabulator-row-even,
+body .schema-builder .tabulator-row,
+body .schema-builder .tabulator-row.tabulator-row-even {
+  margin: 0;
+  background: none;
+  border-radius: 0;
+}
+
+body .table-properties .table-properties-wrap .tabulator-row .tabulator-cell :is(pre, input:not([type="checkbox"])),
+body .schema-builder .tabulator-row .tabulator-cell :is(pre, input:not([type="checkbox"])) {
+  height: 17px;
+  min-height: 17px;
+  line-height: 16px !important;
+}
+
+body .table-properties .table-properties-wrap .tabulator-row .tabulator-cell .tabulator-bks-checkbox,
+body .schema-builder .tabulator-row .tabulator-cell .tabulator-bks-checkbox {
+  height: 17px;
+}
+
+body .table-properties .table-properties-wrap .tabulator-row .tabulator-cell.no-padding > *,
+body .schema-builder .tabulator-row .tabulator-cell.no-padding > * {
+  margin: 0 3px;
+}
+
+body .table-properties .table-properties-wrap .tabulator-row .tabulator-cell,
+body .schema-builder .tabulator-row .tabulator-cell {
+  height: 17px;
+  min-height: 17px;
+  padding: 0 3px;
+  line-height: 16px;
+  color: var(--win-text);
+}
+
+/* The filter bar is a toolbar: 21px fields and 22px buttons, 3px apart. */
+.table-filter form {
+  overflow-y: auto;
+}
+
+.table-filter .filter-group {
+  align-items: center;
+  margin: 0;
+  padding: 0 0 3px;
+}
+
+.table-filter .filter-group > * {
+  padding: 0 3px 0 0;
+}
+
+.table-filter .filter-group .select-wrap,
+.table-filter .filter-group .select-wrap:hover {
+  padding-right: 0;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  cursor: default;
+}
+
+/* The app hides the arrow until the pointer is over the filter. */
+.table-filter .filter-group .select-wrap > select,
+.table-filter .filter-group .filter-container:not(:hover) .select-wrap > select {
+  padding: 0 20px 0 4px;
+  background: var(--win-combo), var(--win-window) !important;
   box-shadow: var(--bevel-field);
 }
 
 .table-filter .filter input,
 .table-filter .filter input:focus {
+  padding-right: 20px;
+  background: var(--win-window);
+  border: 0;
   box-shadow: var(--bevel-field);
 }
 
-.table-filter .filter-group .select-wrap > select {
-  box-shadow: none;
+.table-filter .filter .clear i {
+  width: 20px;
+  font-size: 12px;
+}
+
+.table-filter .filter-drag-icon {
+  display: none;
 }
 
 /* ===== Tooltips ===== */
 
-.tooltip .tooltip-inner {
+/* A tooltip is a pale yellow box with a 1px black frame and 2px of padding. */
+.tooltip .tooltip-inner,
+.bks-tooltip-wrapper .bks-tooltip {
+  padding: 2px 3px !important;
+  line-height: 13px;
   color: var(--win-text);
   background: var(--win-tooltip-bg);
   border-radius: 0;
   box-shadow: 0 0 0 1px var(--win-text);
+}
+
+.bks-tooltip-wrapper .bks-tooltip,
+.bks-tooltip-wrapper .bks-tooltip a {
+  line-height: 13px;
+  color: var(--win-text);
+}
+
+.tooltip .tooltip-arrow {
+  display: none;
 }
 
 /* ===== Dialogs ===== */
@@ -1012,17 +2545,17 @@ body .cm-tooltip.cm-tooltip-autocomplete.BksTextEditor-hints ul li:hover {
 /* Every modal is a window: a title bar is painted across the top of the box,
    inside the bevel, and the modal's own title is laid over it. */
 body .v--modal {
-  padding-top: 20px !important;
-  background: var(--titlebar-bg) 2px 2px / calc(100% - 4px) 18px no-repeat,
+  padding: 22px 3px 3px !important;
+  background: var(--titlebar-bg) 3px 3px / calc(100% - 6px) 18px no-repeat,
     var(--panel-bg);
 }
 
 body .vue-dialog .v--modal .dialog-c-title,
 body .base-modal-root .v--modal .base-modal-header {
   position: absolute;
-  top: 2px;
-  left: 2px;
-  right: 2px;
+  top: 3px;
+  left: 3px;
+  right: 3px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -1057,8 +2590,8 @@ body .base-modal-root .v--modal .base-modal-title :is(a, i, span) {
 body .vue-dialog .v--modal .close-btn,
 body .base-modal-root .v--modal .base-modal-close {
   position: absolute;
-  top: 4px;
-  right: 4px;
+  top: 5px;
+  right: 5px;
   z-index: 1;
   width: 16px;
   min-width: 16px;
@@ -1095,6 +2628,151 @@ body .base-modal-root .v--modal .base-modal-close i {
   mask: var(--win-glyph-close) center no-repeat;
 }
 
+/* Every window has a caption. A dialog without one takes the app's name. */
+body .base-modal-root .v--modal .base-modal-title:empty::before {
+  content: "Beekeeper Studio";
+}
+
+/* A dialog's contents keep 11px clear of its edges. */
+body .v--modal .base-modal .base-modal-body {
+  padding: 11px;
+}
+
+body .v--modal .base-modal .base-modal-footer {
+  gap: 6px;
+  padding: 0 11px 11px;
+}
+
+/* The connection types are a list box: 17px rows, one of them selected. */
+body .v--modal .base-modal-body .toolbar,
+body .v--modal .base-modal-body .connection-types {
+  margin-right: 0;
+}
+
+body .v--modal .base-modal-body .toolbar:has(.filter-wrap) {
+  margin-bottom: 7px;
+  background: var(--win-face);
+  box-shadow: none;
+}
+
+/* The list scrolls inside its own frame, not the dialog. */
+body .v--modal .base-modal .base-modal-body:has(> .connection-types) {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+body .v--modal .base-modal-body .connection-types {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 2px;
+  background: var(--win-window);
+  box-shadow: var(--bevel-field);
+}
+
+body .v--modal .connection-types .connection-type,
+body .v--modal .connection-types .connection-type:is(:hover, :focus-within) {
+  height: 17px;
+  padding: 0 2px;
+  line-height: 17px;
+  background: none;
+  border-radius: 0;
+}
+
+body .v--modal .connection-types .connection-type.selected,
+body .v--modal .connection-types .connection-type:has(input:checked) {
+  color: var(--win-highlight-text);
+  background: var(--win-highlight);
+}
+
+body .v--modal .connection-types .connection-type .database-icon {
+  width: 16px;
+  margin-right: 3px;
+}
+
+/* The settings dialog lists its pages in a list box. */
+.v--modal .config .config-nav {
+  margin-right: 11px;
+  padding: 2px;
+  background: var(--win-window);
+  box-shadow: var(--bevel-field);
+}
+
+.v--modal .config .config-nav .btn.nav-btn,
+.v--modal .config .config-nav .btn.nav-btn:hover {
+  justify-content: flex-start;
+  height: 17px;
+  padding: 0 3px;
+  line-height: 17px;
+  color: var(--win-text);
+  background: none;
+  box-shadow: none;
+}
+
+.v--modal .config .config-nav .btn.nav-btn.active {
+  color: var(--win-highlight-text);
+  background: var(--win-highlight);
+}
+
+.v--modal .config .config-nav .btn.nav-btn .material-icons {
+  font-size: 14px;
+}
+
+/* The theme mode options are a row of buttons, with the chosen one held in. */
+.v--modal .mode-options .mode-option {
+  height: 23px;
+  padding: 0 10px;
+  font-weight: normal;
+  line-height: 23px;
+  color: var(--win-text);
+  background: var(--win-face);
+  border-radius: 0;
+  box-shadow: var(--bevel-raised);
+  transition: none;
+  cursor: default;
+}
+
+.v--modal .mode-options .mode-option .mode-option-content,
+.v--modal .mode-options .mode-option input:checked + .mode-option-content {
+  padding: 0;
+  color: inherit;
+  background: none;
+  border-radius: 0;
+}
+
+.v--modal .mode-options .mode-option:has(input:checked) {
+  background-image: conic-gradient(
+    var(--bevel-light) 25%,
+    transparent 0 50%,
+    var(--bevel-light) 0 75%,
+    transparent 0
+  );
+  background-size: 2px 2px;
+  box-shadow: var(--bevel-pressed);
+}
+
+.v--modal .theme-item .theme-label {
+  font-weight: normal;
+}
+
+/* A theme's preview is a picture in a sunken frame. The radio button
+   alone shows which one is chosen. */
+body .v--modal label.theme-item .theme-preview-frame,
+body .v--modal label.theme-item.selected .theme-preview-frame,
+body .v--modal label.theme-item:has(input:focus-visible) .theme-preview-frame {
+  padding: 2px;
+  border: 0;
+  border-radius: 0;
+  outline: none;
+  box-shadow: var(--bevel-field);
+}
+
+body .v--modal label.theme-item .theme-preview-frame > * {
+  border-radius: 0;
+}
+
 /* Cards hardcode their own radius, so the panel token alone misses them. */
 .card,
 .card-flat,
@@ -1106,14 +2784,156 @@ x-card,
 
 /* ===== Connection form ===== */
 
-/* The form stands off the desktop like a window. */
-.connection-main .connection-form-card {
+/* The form is a window on the desktop: its heading is the caption, and its
+   contents keep 11px clear of the frame. */
+.connection-main .connection-form-card,
+.connection-main .connection-form-card.card-flat[class*="connection-label-color"] {
+  position: relative;
+  padding: 32px 14px 14px;
+  background: var(--titlebar-bg) 3px 3px / calc(100% - 6px) 18px no-repeat,
+    var(--win-face);
   box-shadow: var(--bevel-window);
 }
 
-/* The label color strip stays inside the bevel. */
+.connection-main .connection-form-card .connection-heading .card-title {
+  position: absolute;
+  top: 3px;
+  left: 6px;
+  right: 6px;
+  overflow: hidden;
+  font-weight: bold;
+  line-height: 18px;
+  white-space: nowrap;
+  color: var(--titlebar-fg);
+}
+
+.connection-main .connection-form-card .connection-heading {
+  justify-content: flex-end;
+  min-height: 0;
+}
+
+/* The label color is a band under the caption. */
+.connection-main .connection-form-card.card-flat[class*="connection-label-color"] {
+  padding-top: 38px;
+}
+
 .connection-main .connection-form-card.card-flat[class*="connection-label-color"]::before {
-  inset: 2px 2px auto;
+  inset: 21px 3px auto;
+  height: 6px;
+}
+
+/* The connection type is a drop-down list like the ones below it. */
+.connection-main .connection-type-wrapper .label {
+  padding: 0;
+  margin-bottom: 3px;
+  line-height: 13px;
+}
+
+body .connection-main .connection-type-wrapper .connection-type-btn,
+body .connection-main .connection-type-wrapper .connection-type-btn:is(:hover, :focus) {
+  gap: 4px;
+  height: 21px;
+  padding: 0 20px 0 4px;
+  line-height: 21px;
+  color: var(--win-text);
+  background: var(--win-combo), var(--win-window);
+  border: 0;
+  border-radius: 0;
+  box-shadow: var(--bevel-field);
+  cursor: default;
+}
+
+.connection-main .connection-type-wrapper .connection-type-btn::after,
+.connection-main .connection-type-wrapper .connection-type-btn > .material-icons {
+  display: none;
+}
+
+/* The line above Save Connection is etched. */
+.connection-main .save-connection {
+  border-top: 1px solid var(--bevel-dark);
+  box-shadow: inset 0 1px var(--bevel-light);
+}
+
+.connection-sidebar .tab-content > .fixed {
+  padding: 0 4px;
+}
+
+.connection-sidebar .filter,
+.connection-sidebar .filter .filter-wrap {
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+}
+
+/* The open workspace is a held-in button on the rail. */
+.interface-wrap .global-items.workspace-items .nav-item.active .avatar {
+  background-color: var(--win-face);
+  background-image: conic-gradient(
+    var(--bevel-light) 25%,
+    transparent 0 50%,
+    var(--bevel-light) 0 75%,
+    transparent 0
+  );
+  background-size: 2px 2px;
+  box-shadow: var(--bevel-pressed);
+}
+
+/* Label colors are swatches in a palette, and the chosen one is framed. */
+input[type="radio"].connection-label,
+input[type="radio"].connection-label:checked {
+  width: 13px;
+  height: 13px;
+  margin: 0 0 0 3px;
+  background-image: none;
+  box-shadow: var(--bevel-thin-sunken);
+}
+
+input[type="radio"].connection-label,
+input[type="radio"].connection-label:checked {
+  border-radius: 0;
+}
+
+input[type="radio"].connection-label:checked {
+  box-shadow: inset 0 0 0 1px var(--win-text), inset 0 0 0 2px var(--bevel-light);
+}
+
+/* ----- Saved connections ----- */
+
+/* A saved connection takes two lines: its name, and where it points. */
+.connection-sidebar .list-group .list-item-btn {
+  height: auto;
+  padding: 2px 3px;
+  line-height: 13px;
+}
+
+.connection-sidebar .list-group .list-item-btn:is(:hover, :focus):not(.active, .selected) {
+  background: none;
+}
+
+.connection-sidebar .connection-label {
+  width: 3px;
+  min-width: 3px;
+  height: 26px;
+  margin-right: 5px;
+  border-radius: 0;
+}
+
+.connection-sidebar .connection-title .subtitle {
+  color: var(--win-gray-text);
+}
+
+.connection-sidebar .list-item-btn.active .connection-title .subtitle,
+.connection-sidebar .list-item-btn.selected .connection-title .subtitle {
+  color: inherit;
+}
+
+/* The app fades the end of the list into the sidebar. */
+.connection-sidebar .connection-wrap .list .list-body::after {
+  display: none;
+}
+
+.connection-sidebar .btn-wrap.quick-connect {
+  padding: 4px;
 }
 
 /* Sections like Enable SSH are group boxes: an etched frame with the
