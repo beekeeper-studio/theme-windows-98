@@ -34,10 +34,7 @@
   --titlebar-inactive-bg: linear-gradient(90deg, #808080, #b5b5b5);
   --titlebar-inactive-fg: #c0c0c0;
 
-  --win-arrow-up: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='7' height='4' shape-rendering='crispEdges'><path fill='black' d='M3 0h1v1h1v1h1v1h1v1H0V3h1V2h1V1h1z'/></svg>");
   --win-arrow-down: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='7' height='4' shape-rendering='crispEdges'><path fill='black' d='M0 0h7v1H6v1H5v1H4v1H3V3H2V2H1V1H0z'/></svg>");
-  --win-arrow-left: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='7' shape-rendering='crispEdges'><path fill='black' d='M3 0h1v7H3V6H2V5H1V4H0V3h1V2h1V1h1z'/></svg>");
-  --win-arrow-right: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='7' shape-rendering='crispEdges'><path fill='black' d='M0 0h1v1h1v1h1v1h1v1H3v1H2v1H1v1H0z'/></svg>");
 
   /* Visual C++ 6 editor colors */
   --syntax-keyword: #0000ff;
@@ -87,10 +84,7 @@
   --titlebar-inactive-bg: linear-gradient(90deg, #404040, #606060);
   --titlebar-inactive-fg: #a0a0a0;
 
-  --win-arrow-up: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='7' height='4' shape-rendering='crispEdges'><path fill='white' d='M3 0h1v1h1v1h1v1h1v1H0V3h1V2h1V1h1z'/></svg>");
   --win-arrow-down: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='7' height='4' shape-rendering='crispEdges'><path fill='white' d='M0 0h7v1H6v1H5v1H4v1H3V3H2V2H1V1H0z'/></svg>");
-  --win-arrow-left: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='7' shape-rendering='crispEdges'><path fill='white' d='M3 0h1v7H3V6H2V5H1V4H0V3h1V2h1V1h1z'/></svg>");
-  --win-arrow-right: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='7' shape-rendering='crispEdges'><path fill='white' d='M0 0h1v1h1v1h1v1h1v1H3v1H2v1H1v1H0z'/></svg>");
 
   /* The bright half of the 16-color VGA palette */
   --syntax-keyword: #55ffff;
@@ -128,11 +122,48 @@
     inset 1px 1px var(--bevel-light);
   --bevel-thin-sunken: inset -1px -1px var(--bevel-light),
     inset 1px 1px var(--bevel-dark);
+  /* The groove around a group box */
+  --bevel-etched: inset -1px -1px var(--bevel-light),
+    inset 1px 1px var(--bevel-dark), inset -2px -2px var(--bevel-dark),
+    inset 2px 2px var(--bevel-light);
+  /* A raised edge with no bottom, for tabs */
+  --bevel-tab: inset -1px 0 var(--bevel-darkest),
+    inset 1px 1px var(--bevel-light), inset -2px 0 var(--bevel-dark),
+    inset 2px 2px var(--bevel-mid);
+  /* Top corners notched by one pixel, like a property sheet tab */
+  --tab-clip: polygon(
+    0 2px, 1px 2px, 1px 1px, 2px 1px, 2px 0,
+    calc(100% - 2px) 0, calc(100% - 2px) 1px, calc(100% - 1px) 1px,
+    calc(100% - 1px) 2px, 100% 2px, 100% 100%, 0 100%
+  );
+
+  /* A combo box: the drop-down button is painted inside the field's bevel.
+     Layers run from the arrow, through the button's edges, to its face. */
+  --win-combo: var(--win-arrow-down) right 6px center / 7px 4px no-repeat,
+    linear-gradient(var(--bevel-darkest) 0 0) right 2px bottom 2px / 16px 1px no-repeat,
+    linear-gradient(var(--bevel-darkest) 0 0) right 2px top 2px / 1px calc(100% - 4px) no-repeat,
+    linear-gradient(var(--bevel-dark) 0 0) right 3px bottom 3px / 14px 1px no-repeat,
+    linear-gradient(var(--bevel-dark) 0 0) right 3px top 3px / 1px calc(100% - 6px) no-repeat,
+    linear-gradient(var(--bevel-light) 0 0) right 2px top 2px / 16px 1px no-repeat,
+    linear-gradient(var(--bevel-light) 0 0) right 17px top 2px / 1px calc(100% - 4px) no-repeat,
+    linear-gradient(var(--win-face) 0 0) right 2px top 2px / 16px calc(100% - 4px) no-repeat;
+
+  /* Caption button glyphs, drawn on the 12x10 area inside the bevel */
+  --win-glyph-minimize: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='10' shape-rendering='crispEdges'><path d='M2 7h6v2H2z'/></svg>");
+  --win-glyph-maximize: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='10' shape-rendering='crispEdges'><path fill-rule='evenodd' d='M1 0h9v9H1zM2 2v6h7V2z'/></svg>");
+  --win-glyph-restore: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='10' shape-rendering='crispEdges'><path d='M3 0h6v2H3zM8 2h1v4H8zM7 5h1v1H7zM3 2h1v1H3zM1 3h6v2H1zM1 5h1v4H1zM6 5h1v4H6zM2 8h4v1H2z'/></svg>");
+  --win-glyph-close: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='10' shape-rendering='crispEdges'><path d='M2 1h2v1H2zM8 1h2v1H8zM3 2h2v1H3zM7 2h2v1H7zM4 3h4v1H4zM5 4h2v1H5zM4 5h4v1H4zM3 6h2v1H3zM7 6h2v1H7zM2 7h2v1H2zM8 7h2v1H8z'/></svg>");
+  --win-glyph-hourglass: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='16' shape-rendering='crispEdges'><path d='M1 0h10v2H1zM1 14h10v2H1zM2 2h1v2H2zM9 2h1v2H9zM3 4h1v1H3zM8 4h1v1H8zM4 5h1v1H4zM7 5h1v1H7zM5 6h2v4H5zM4 10h1v1H4zM7 10h1v1H7zM3 11h1v1H3zM8 11h1v1H8zM2 12h1v2H2zM9 12h1v2H9zM4 3h4v1H4zM5 11h2v1H5zM4 12h4v2H4z'/></svg>");
 
   --font-family: "Pixelated MS Sans Serif", "MS Sans Serif",
     "Microsoft Sans Serif", Tahoma, Geneva, Verdana, sans-serif;
   font-family: var(--font-family);
   -webkit-font-smoothing: none;
+
+  /* Fixedsys if it is installed, or else the Courier of Visual C++ 6 */
+  --font-family-mono: "Fixedsys Excelsior 3.01", "Fixedsys Excelsior",
+    Fixedsys, "Courier New", Courier, monospace;
+  --editor-font-family: var(--font-family-mono);
 
   /* App */
   --app-bg: var(--win-desktop);
@@ -224,12 +255,12 @@
   --alert-border-radius: 0;
 
   /* Nav pills */
-  --nav-pills-shadow: inset 0 -1px var(--bevel-dark);
+  --nav-pills-shadow: inset 0 -1px var(--bevel-light);
   --nav-pill-fg: var(--win-text);
   --nav-pill-fg-hover: var(--win-text);
-  --nav-pill-shadow-hover: none;
+  --nav-pill-shadow-hover: var(--bevel-tab);
   --nav-pill-active-fg: var(--win-text);
-  --nav-pill-active-shadow: inset 0 -2px var(--win-highlight);
+  --nav-pill-active-shadow: var(--bevel-tab);
 
   --tree-guide-border: var(--bevel-dark);
   --tree-guide-border-hover: var(--bevel-dark);
@@ -336,11 +367,25 @@ x-selectbutton,
   border-radius: 0 !important;
 }
 
-.btn-flat:active {
+/* Clicking pushes the button in. There is no ink ripple. */
+x-button,
+x-tab,
+x-menuitem,
+x-select,
+x-checkbox,
+x-radio,
+x-switch {
+  --trigger-effect: none !important;
+  --ripple-type: none !important;
+}
+
+.btn-flat:active,
+.btn-flat[pressed] {
   --btn-flat-shadow: var(--bevel-pressed);
 }
 
-.btn-primary:active {
+.btn-primary:active,
+.btn-primary[pressed] {
   --btn-primary-shadow: var(--bevel-pressed);
 }
 
@@ -348,7 +393,8 @@ x-selectbutton,
   box-shadow: var(--bevel-thin-raised);
 }
 
-.btn:not(.btn-flat, .btn-primary):active {
+.btn:not(.btn-flat, .btn-primary):active,
+.btn:not(.btn-flat, .btn-primary)[pressed] {
   box-shadow: var(--bevel-thin-sunken);
 }
 
@@ -379,6 +425,38 @@ select,
 textarea {
   border-radius: 0;
   box-shadow: var(--bevel-field);
+}
+
+/* The app draws its own arrow with an !important background. */
+body select {
+  padding: 0 22px 0 6px;
+  border: 0;
+  background: var(--win-combo), var(--input-bg) !important;
+}
+
+body select.auto-width {
+  padding-right: 22px;
+  background-position-x: unset !important;
+}
+
+body select option {
+  color: var(--win-text);
+  background: var(--win-window);
+}
+
+body select option:checked,
+body select option:hover {
+  color: var(--win-highlight-text);
+  box-shadow: 0 0 10px 100px var(--win-highlight) inset;
+}
+
+/* The select carries the field look itself, so its wrapper is plain. */
+body .select-wrap,
+body .select-wrap:hover {
+  padding-right: 0;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 input[type="checkbox"],
@@ -430,41 +508,9 @@ input[type="radio"]:checked {
   box-shadow: var(--bevel-raised);
 }
 
+/* No arrow buttons: the track runs the full length of the bar. */
 ::-webkit-scrollbar-button {
-  display: block;
-  width: 16px;
-  height: 16px;
-  background-color: var(--win-face);
-  background-position: center;
-  background-repeat: no-repeat;
-  box-shadow: var(--bevel-raised);
-}
-
-::-webkit-scrollbar-button:active {
-  box-shadow: inset 0 0 0 1px var(--bevel-dark);
-}
-
-::-webkit-scrollbar-button:vertical:start:increment,
-::-webkit-scrollbar-button:vertical:end:decrement,
-::-webkit-scrollbar-button:horizontal:start:increment,
-::-webkit-scrollbar-button:horizontal:end:decrement {
   display: none;
-}
-
-::-webkit-scrollbar-button:vertical:decrement {
-  background-image: var(--win-arrow-up);
-}
-
-::-webkit-scrollbar-button:vertical:increment {
-  background-image: var(--win-arrow-down);
-}
-
-::-webkit-scrollbar-button:horizontal:decrement {
-  background-image: var(--win-arrow-left);
-}
-
-::-webkit-scrollbar-button:horizontal:increment {
-  background-image: var(--win-arrow-right);
 }
 
 ::-webkit-scrollbar-corner {
@@ -485,15 +531,162 @@ input[type="radio"]:checked {
   --btn-primary-bg-hover: var(--win-face);
 }
 
+.global-status-bar,
+.global-status-bar .statusbar {
+  box-shadow: inset 0 1px var(--bevel-light);
+}
+
+/* Each piece of status text sits in its own sunken panel. */
+.global-status-bar .statusbar-item:not(.btn, .result-selector),
+.global-status-bar span.empty,
+body .global-status-bar .connection-button {
+  height: 20px;
+  margin: 0 1px;
+  line-height: 20px;
+  font-weight: normal;
+  box-shadow: var(--bevel-thin-sunken);
+}
+
+.global-status-bar span.empty {
+  display: inline-flex;
+  align-items: center;
+}
+
+.global-status-bar .statusbar-item:not(.btn, .result-selector) i {
+  line-height: 20px;
+}
+
+body .global-status-bar .connection-button {
+  margin: 3px 1px 3px 2px;
+}
+
+/* Buttons are as tall as the panels beside them. */
+body .global-status-bar .btn {
+  height: 20px;
+  line-height: 20px;
+}
+
+body .global-status-bar .select-wrap,
+body .global-status-bar .select-wrap:hover {
+  height: 20px;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+body .global-status-bar .select-wrap select {
+  height: 20px;
+  line-height: 20px;
+  font-weight: normal;
+  color: var(--win-text);
+  background: var(--win-combo), var(--win-window) !important;
+}
+
+/* The app joins these button pairs into one dark pill. Here each half is an
+   ordinary button. */
+body .global-status-bar .download-results,
+body .global-status-bar .pending-changes {
+  --statusbar-fg-inverse: var(--win-text);
+  overflow: visible;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+body .global-status-bar .download-results > .btn,
+body .global-status-bar .pending-changes > .btn,
+body .global-status-bar .pending-changes > .btn[menu] {
+  color: var(--win-text);
+  background: var(--win-face);
+  border: 0;
+}
+
+/* ===== Toolbars ===== */
+
+/* A toolbar is a gray band with a lit top edge and a shaded bottom edge. */
+body .query-editor .toolbar,
+body .query-editor .bottom-panel .toolbar {
+  padding: 3px 4px;
+  background: var(--win-face);
+  box-shadow: inset 0 1px var(--bevel-light), inset 0 -1px var(--bevel-dark);
+}
+
+/* The editor's toolbar runs the full width, past the frame around the editor. */
+body .query-editor .top-panel > .toolbar {
+  margin: 4px -4px 0;
+}
+
+/* An etched divider between the two groups of buttons */
+body .query-editor .toolbar .actions.primary-actions {
+  margin-left: 6px;
+  padding-left: 8px;
+  box-shadow: inset 1px 0 var(--bevel-dark), inset 2px 0 var(--bevel-light);
+}
+
+/* ===== Window frame ===== */
+
+/* The app sits in a raised gray frame, 4px wide, with the desktop color kept
+   inside it. A maximized or fullscreen window has no frame. */
+.beekeeper-studio-wrapper:not(:has(.titlebar.fullscreen, #maximize .maximized)) {
+  padding: 4px;
+  background: linear-gradient(var(--app-bg) 0 0) content-box,
+    linear-gradient(var(--win-face) 0 0) padding-box;
+  box-shadow: var(--bevel-window);
+}
+
 /* ===== Title bar ===== */
 
 .titlebar-wrapper {
   font-weight: bold;
 }
 
+/* The menu bar is a list, and lists in the menu take the menu color, which
+   is black. The bar sits on the title bar, so it follows the title instead. */
+.titlebar .flyout-nav > .menu-bar,
+.titlebar .flyout-nav > .menu-bar .top-menu-item > a.selected .label {
+  color: inherit;
+}
+
+/* A Windows 98 caption is 18px tall. The app's is nearly twice that, held
+   open by padding, the logo and the menu labels. */
+.titlebar-wrapper {
+  padding-block: 0;
+}
+
+.titlebar-wrapper .titlebar {
+  height: 18px;
+  min-height: 18px;
+  padding: 0 2px;
+}
+
+.titlebar .titlebar-icon img {
+  width: 16px;
+  height: 16px;
+  margin: 1px 3px 1px 1px;
+  padding: 0;
+}
+
+.titlebar .flyout-nav > .menu-bar .top-menu-item > a > .label {
+  height: 18px;
+  padding: 0 6px;
+}
+
+.titlebar .titlebar-title {
+  line-height: 18px;
+}
+
+.titlebar x-menubar {
+  margin: 0;
+}
+
 /* The app sets the inactive color with background-color, which drops gradients. */
 body.window-inactive .titlebar-wrapper {
   background: var(--titlebar-inactive-bg);
+}
+
+.titlebar .titlebar-actions .titlebar-actions-extra {
+  gap: 0;
+  margin-right: 2px;
 }
 
 .titlebar .window-controls-container {
@@ -502,6 +695,7 @@ body.window-inactive .titlebar-wrapper {
   margin-right: 2px;
 }
 
+.titlebar .titlebar-actions .titlebar-actions-extra > button.btn,
 .titlebar .titlebar-actions .window-controls-container button {
   justify-content: center;
   width: 16px;
@@ -514,20 +708,47 @@ body.window-inactive .titlebar-wrapper {
   --btn-fg-hover: var(--win-text);
 }
 
+.titlebar .titlebar-actions .titlebar-actions-extra > button.btn:active,
 .titlebar .titlebar-actions .window-controls-container button:active {
   box-shadow: var(--bevel-pressed);
 }
 
-.titlebar .titlebar-actions .window-controls-container button i {
+.titlebar .titlebar-actions .titlebar-actions-extra > button.btn i {
   font-size: 12px;
 }
 
-.titlebar .titlebar-actions #maximize,
-.titlebar .titlebar-actions #quit {
+/* The icon font is replaced with the original bitmap glyphs. */
+.titlebar .titlebar-actions .window-controls-container button i {
+  width: 12px;
+  height: 10px;
+  font-size: 0;
+  background: currentColor;
+  transform: none;
+  -webkit-mask: var(--win-glyph) center no-repeat;
+  mask: var(--win-glyph) center no-repeat;
+}
+
+.titlebar .titlebar-actions .window-controls-container button:active i {
+  transform: translate(1px, 1px);
+}
+
+.titlebar .titlebar-actions #minimize {
+  --win-glyph: var(--win-glyph-minimize);
+}
+
+.titlebar .titlebar-actions #maximize {
+  --win-glyph: var(--win-glyph-maximize);
   --btn-bg-hover: var(--win-face);
 }
 
+.titlebar .titlebar-actions #maximize:has(.maximized),
+.titlebar.fullscreen .titlebar-actions #maximize {
+  --win-glyph: var(--win-glyph-restore);
+}
+
 .titlebar .titlebar-actions #quit {
+  --win-glyph: var(--win-glyph-close);
+  --btn-bg-hover: var(--win-face);
   margin-left: 2px;
 }
 
@@ -552,18 +773,121 @@ body.window-inactive .titlebar-wrapper {
   --btn-fg: var(--win-highlight-text);
 }
 
+/* The secondary sidebar's titles, like JSON Viewer, are tabs. */
+.sidebar.secondary-sidebar .sidebar-heading {
+  align-items: flex-end;
+  padding: 4px 4px 0;
+  box-shadow: inset 0 -1px var(--bevel-light);
+}
+
+.sidebar.secondary-sidebar .sidebar-heading x-tabs {
+  align-items: flex-end;
+  gap: 0;
+}
+
+.sidebar.secondary-sidebar .sidebar-heading x-tabs x-tab {
+  margin: 5px 0 1px;
+  padding: 2px 8px;
+  color: var(--win-text);
+  background: var(--win-face);
+  box-shadow: var(--bevel-tab);
+  clip-path: var(--tab-clip);
+}
+
+.sidebar.secondary-sidebar .sidebar-heading x-tabs x-tab[selected] {
+  position: relative;
+  margin: 0;
+  padding: 5px 8px;
+}
+
+.sidebar.secondary-sidebar .sidebar-heading .actions {
+  align-self: center;
+}
+
 /* ===== Tabs ===== */
+
+/* Property sheet tabs: the open tab stands taller and joins the page below,
+   and the rest sit behind the line along the bottom of the strip. */
+.core-tabs .tabs-header {
+  padding: 6px 4px 0;
+  box-shadow: inset 0 -1px var(--bevel-light);
+}
+
+/* The tab height is the app's own, 2.4rem. */
+.core-tabs .tabs-header .nav-tabs .nav-link {
+  height: calc(2.4rem - 6px);
+  margin: 5px 0 1px;
+  line-height: calc(2.4rem - 6px);
+  clip-path: var(--tab-clip);
+}
+
+.core-tabs .tabs-header .nav-tabs .nav-link.active {
+  height: 2.4rem;
+  margin: 0;
+  line-height: 2.4rem;
+  font-weight: normal;
+  box-shadow: var(--bevel-tab);
+}
+
+/* The open tab is marked with a dotted focus rectangle around its label,
+   not with bold text. This one stops short of the close button. */
+.core-tabs .tabs-header .nav-tabs .nav-link.active::after,
+body .nav-pills .nav-pill.active::after,
+.sidebar.secondary-sidebar .sidebar-heading x-tabs x-tab[selected]::after {
+  content: "";
+  position: absolute;
+  inset: 4px 5px 3px;
+  border: 1px dotted var(--win-text);
+  pointer-events: none;
+}
+
+.core-tabs .tabs-header .nav-tabs .nav-link.active::after {
+  right: 31px;
+}
+
+/* The close button's backdrop covers the end of the tab, so it stays inside
+   the bevel and lets the tab's top and right edges show. */
+.core-tabs .tabs-header .nav-tabs .nav-link .tab-action,
+.core-tabs .tabs-header .nav-tabs .nav-link.active .tab-action {
+  top: 2px;
+  right: 2px;
+  height: auto;
+  background: var(--win-face);
+}
+
+.core-tabs .nav-tabs .tab-close {
+  border-radius: 0;
+}
+
+/* Pills, like the ones on a table's structure tab, are tabs too. */
+body .nav-pills {
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 6px 4px 0;
+  background: var(--win-face);
+}
+
+body .nav-pills .nav-pill {
+  margin: 5px 0 1px;
+  padding: 3px 10px;
+  font-weight: normal;
+  background: var(--win-face);
+  box-shadow: var(--bevel-tab);
+  clip-path: var(--tab-clip);
+  transition: none;
+}
+
+body .nav-pills .nav-pill.active {
+  margin: 0;
+  position: relative;
+  padding: 6px 10px;
+}
 
 .core-tabs .nav-tabs .nav-link,
 .core-tabs .nav-tabs .nav-link.active {
   border-radius: 0;
   border-right: 0;
-  box-shadow: inset -1px 0 var(--bevel-darkest), inset 1px 1px var(--bevel-light),
-    inset -2px 0 var(--bevel-dark), inset 2px 2px var(--bevel-mid);
-}
-
-.core-tabs .nav-tabs .nav-link.active {
-  font-weight: bold;
+  box-shadow: var(--bevel-tab);
 }
 
 /* ===== Menus ===== */
@@ -582,6 +906,32 @@ x-menuitem:focus x-icon,
 x-menuitem[expanded] x-label,
 x-menuitem[expanded] x-icon {
   color: var(--win-highlight-text);
+}
+
+/* The editor sets the selected completion's color from script, with the
+   panel text color, and tints keywords and functions on top of that. */
+body .cm-tooltip.cm-tooltip-autocomplete.BksTextEditor-hints {
+  font-family: var(--font-family-mono);
+  border-radius: 0;
+  box-shadow: var(--bevel-window);
+}
+
+body .cm-tooltip.cm-tooltip-autocomplete.BksTextEditor-hints ul li[aria-selected],
+body .cm-tooltip.cm-tooltip-autocomplete.BksTextEditor-hints ul li:hover {
+  color: var(--win-highlight-text);
+  background: var(--win-highlight);
+}
+
+/* The query editor is a sunken white text area set in a gray frame. */
+.query-editor .top-panel {
+  padding: 4px 4px 0;
+  background: var(--win-face);
+}
+
+.query-editor .top-panel > :is(.BksTextEditor, .BksSqlTextEditor) {
+  padding: 2px;
+  background: var(--win-window);
+  box-shadow: var(--bevel-field);
 }
 
 /* ===== Tables ===== */
@@ -632,6 +982,7 @@ x-menuitem[expanded] x-icon {
 .table-filter .filter input,
 .table-filter .filter-group .select-wrap,
 .table-filter .filter-group .select-wrap:hover {
+  padding-right: 0;
   background: var(--win-window);
   border: 0;
   border-radius: 0;
@@ -658,14 +1009,90 @@ x-menuitem[expanded] x-icon {
 
 /* ===== Dialogs ===== */
 
-.vue-dialog .dialog-c-title {
-  margin: -1.2rem -1.2rem 1.2rem;
-  padding: 3px 4px;
+/* Every modal is a window: a title bar is painted across the top of the box,
+   inside the bevel, and the modal's own title is laid over it. */
+body .v--modal {
+  padding-top: 20px !important;
+  background: var(--titlebar-bg) 2px 2px / calc(100% - 4px) 18px no-repeat,
+    var(--panel-bg);
+}
+
+body .vue-dialog .v--modal .dialog-c-title,
+body .base-modal-root .v--modal .base-modal-header {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+  height: 18px;
+  margin: 0;
+  padding: 0 22px 0 3px;
+  overflow: hidden;
   font-size: 0.85rem;
   font-weight: bold;
   line-height: 18px;
+  white-space: nowrap;
+  text-align: left;
   color: var(--titlebar-fg);
-  background: var(--titlebar-bg);
+}
+
+body .base-modal-root .v--modal .base-modal-title {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+body .vue-dialog .v--modal .dialog-c-title :is(a, i, p, span):not(.close-btn, .close-btn *),
+body .base-modal-root .v--modal .base-modal-title :is(a, i, span) {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+}
+
+/* The close button is a caption button at the right of the title bar. */
+body .vue-dialog .v--modal .close-btn,
+body .base-modal-root .v--modal .base-modal-close {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  z-index: 1;
+  width: 16px;
+  min-width: 16px;
+  height: 14px;
+  margin: 0;
+  padding: 0;
+  opacity: 1;
+  color: var(--win-text);
+  background: var(--win-face);
+  border-radius: 0;
+  box-shadow: var(--bevel-raised);
+}
+
+/* Inside the title, the button is placed from the bar and not the window. */
+body .vue-dialog .v--modal .dialog-c-title .close-btn,
+body .base-modal-root .v--modal .base-modal-header .base-modal-close {
+  top: 2px;
+  right: 2px;
+}
+
+body .vue-dialog .v--modal .close-btn:active,
+body .base-modal-root .v--modal .base-modal-close:active {
+  box-shadow: var(--bevel-pressed);
+}
+
+body .vue-dialog .v--modal .close-btn i,
+body .base-modal-root .v--modal .base-modal-close i {
+  width: 12px;
+  height: 10px;
+  margin: 0;
+  font-size: 0;
+  background: var(--win-text);
+  -webkit-mask: var(--win-glyph-close) center no-repeat;
+  mask: var(--win-glyph-close) center no-repeat;
 }
 
 /* Cards hardcode their own radius, so the panel token alone misses them. */
@@ -675,4 +1102,95 @@ x-card,
 .connection-form-card,
 .advanced-connection-settings {
   border-radius: 0 !important;
+}
+
+/* ===== Connection form ===== */
+
+/* The form stands off the desktop like a window. */
+.connection-main .connection-form-card {
+  box-shadow: var(--bevel-window);
+}
+
+/* The label color strip stays inside the bevel. */
+.connection-main .connection-form-card.card-flat[class*="connection-label-color"]::before {
+  inset: 2px 2px auto;
+}
+
+/* Sections like Enable SSH are group boxes: an etched frame with the
+   caption set into its top edge. */
+body .advanced-connection-settings {
+  margin-top: 1.4rem;
+  padding: 0 0.8rem 0.6rem;
+  background: none !important;
+  box-shadow: var(--bevel-etched);
+}
+
+.advanced-connection-settings > .advanced-heading:first-child,
+.advanced-connection-settings > .flex:first-child:has(.advanced-heading) {
+  align-self: flex-start;
+  gap: 6px;
+  padding: 0 4px;
+  background: var(--win-face);
+  transform: translateY(-50%);
+}
+
+.advanced-connection-settings .advanced-heading {
+  gap: 6px;
+}
+
+.advanced-connection-settings .advanced-body {
+  padding-top: 0;
+}
+
+body .advanced-connection-settings .btn-icon {
+  margin: 0;
+}
+
+/* ===== Loading ===== */
+
+/* A progress bar fills with blocks. */
+body x-progressbar {
+  height: 14px;
+  background: var(--win-face);
+  border-radius: 0;
+  box-shadow: var(--bevel-thin-sunken);
+  --bar-background: repeating-linear-gradient(
+    90deg,
+    var(--win-highlight) 0 8px,
+    transparent 8px 10px
+  );
+  --bar-box-shadow: none;
+}
+
+/* The spinner is an hourglass. */
+body .spinner > div {
+  display: none;
+}
+
+body .spinner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 12px;
+  height: 16px;
+  margin: auto;
+  background: var(--win-text);
+  -webkit-mask: var(--win-glyph-hourglass) center no-repeat;
+  mask: var(--win-glyph-hourglass) center no-repeat;
+  animation: win-hourglass 1.6s steps(1) infinite;
+}
+
+@keyframes win-hourglass {
+  0% {
+    transform: rotate(0);
+  }
+  70% {
+    transform: rotate(45deg);
+  }
+  80% {
+    transform: rotate(90deg);
+  }
+  90% {
+    transform: rotate(135deg);
+  }
 }
