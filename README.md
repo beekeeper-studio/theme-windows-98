@@ -1,15 +1,10 @@
 # Windows 98 for Beekeeper Studio
 
-A theme that recreates the look of Windows 98: beveled buttons and fields, navy title bars, pixel fonts and pixel icons.
+A theme that recreates the look of Windows 98.
 
-## Files
+<img width="1392" height="832" alt="Screenshot 2026-11-13 at 5 31 18 PM" src="https://github.com/user-attachments/assets/2f52f297-fe6e-49f6-a0a0-7fc883836694" />
 
-- `style.css` holds the theme. The app wraps it in `@scope`.
-- `scrollbars.css` holds the scrollbar arrow buttons. Chromium does not match
-  their state selectors inside `@scope`, and an imported stylesheet is left
-  unscoped.
-- `fonts/` holds the pixel fonts. Text is set at 11px throughout, the one size
-  at which the bitmap font is sharp.
+<img width="1392" height="832" alt="Screenshot 2026-11-13 at 5 31 32 PM" src="https://github.com/user-attachments/assets/e9750b41-7608-4984-91c1-833f1d1d9e70" />
 
 ## Credits
 
